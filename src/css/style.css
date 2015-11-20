@@ -1,0 +1,65 @@
+body {
+	color: #E1E1E1;
+}
+
+section {
+	height: auto;
+}
+
+/*######################################*/
+
+#intro {
+	background-color: #2F4254;
+	padding: 4px 0px;
+}
+
+h1#profile-name {
+	font-size: 70px;
+}
+
+img#profile-image {
+	margin-top: 16px;
+	max-height: 350px;
+}
+
+ul#profile-link {
+	margin-top: 16px;
+	list-style: none;
+	color: #111;
+}
+
+ul#profile-link li {
+	display: inline;
+	margin-right: 16px;
+}
+
+ul#profile-link a {
+	color: #E1E1E1;
+	padding-bottom: 8px;
+	border-bottom: 4px solid #666666;
+}
+
+ul#profile-link a:hover {
+	color: #666666;
+	border-bottom: 4px solid #2F4254;
+}
+
+/*######################################*/
+
+#about-me {
+	background-color: #34495E;
+}
+
+h3#about-name {
+	padding-bottom: 5px;
+	margin-right: 16px;
+	border-bottom: 3px solid #E1E1E1;
+}
+
+#latest-tweets {
+	margin-top: 16px;
+	background-color: #16A085;
+	border-radius: 6px;
+	height: 100px;
+	padding: 8px;
+}
