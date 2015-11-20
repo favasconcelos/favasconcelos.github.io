@@ -4,13 +4,13 @@ body {
 
 section {
 	height: auto;
+	padding: 16px 0px;
 }
 
 /*######################################*/
 
 #intro {
 	background-color: #2F4254;
-	padding: 4px 0px;
 }
 
 h1#profile-name {
@@ -18,30 +18,30 @@ h1#profile-name {
 }
 
 img#profile-image {
-	margin-top: 16px;
+	margin-top: 64px;
 	max-height: 350px;
 }
 
 ul#profile-link {
-	margin-top: 16px;
+	margin: 64px 0px;
 	list-style: none;
 	color: #111;
 }
 
 ul#profile-link li {
 	display: inline;
-	margin-right: 16px;
+	margin-right: 32px;
 }
 
 ul#profile-link a {
-	color: #E1E1E1;
+	color: #D9D9D9;
 	padding-bottom: 8px;
-	border-bottom: 4px solid #666666;
+	border-bottom: 3px solid #D9D9D9;
 }
 
 ul#profile-link a:hover {
-	color: #666666;
-	border-bottom: 4px solid #2F4254;
+	color: #ACACAC;
+	border-bottom: 3px solid #ACACAC;
 }
 
 /*######################################*/

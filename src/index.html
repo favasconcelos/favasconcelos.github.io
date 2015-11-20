@@ -14,10 +14,16 @@
   <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/scroll-to-top.css" rel="stylesheet">  
+  <link href="css/timeline.css" rel="stylesheet">  
   <!-- ./CSS -->
 
 </head>
 <body>
+
+  <!--######################################-->
+
+  <div id="scroll-to-top"><i class="fa fa-angle-up fa-2x"></i></div>
 
   <!--######################################-->
 
@@ -27,14 +33,27 @@
 
     <img id ="profile-image" src="http://placehold.it/300x300" class="img-responsive center-block" />
 
-    <ul ID="profile-link">
-      <li><a href="#"><i class="fa fa-facebook-square fa-3x"></i></a></li>
-      <li><a href="#"><i class="fa fa-twitter-square fa-3x"></i></a></li>
-      <li><a href="#"><i class="fa fa-linkedin-square fa-3x"></i></a></li>
-      <li><a href="#"><i class="fa fa-github-square fa-3x"></i></a></li>
-    </ul>
+    <ul id="profile-link">
 
-  </section>
+      <li><a href="http://www.facebook.com/vasconcelos.felipe" target="__blank">
+        <i class="fa fa-facebook-square fa-3x"></i>
+      </a></li>
+
+      <li><a href="http://twitter.com/favasconcelos" target="__blank">
+        <i class="fa fa-twitter-square fa-3x"></i>
+      </a></li>
+
+      <li><a href="http://linkedin.com/in/felipevasconcelos" target="__blank">
+        <i class="fa fa-linkedin-square fa-3x"></i></a>
+      </li>
+
+      <li><a href="http://github.com/favasconcelos" target="__blank">
+        <i class="fa fa-github-square fa-3x"></i>
+      </a></li>
+
+    </ul> <!-- ./profile-link -->
+
+  </section> <!-- ./intro -->
 
   <!--######################################-->
 
@@ -45,34 +64,80 @@
       <div class="row"> 
 
         <div id="about-text" class="col-md-7 col-sm-6">
-        <h3 id="about-name">Felipe Vasconcelos</h3>
+
+          <h3 id="about-name">Felipe Vasconcelos</h3>
+
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor, enim non laoreet dignissim, nisl leo scelerisque neque, ut condimentum est dui at nunc. In rhoncus sapien nec sagittis auctor. Morbi sit amet eros et dolor pellentesque malesuada eu at risus. Phasellus feugiat placerat magna, a condimentum ipsum. Suspendisse dapibus dui vitae suscipit ultrices. Ut venenatis fringilla enim vitae tincidunt. Ut nec mauris id est ullamcorper varius. Nunc ut aliquet sem, a imperdiet tellus. Nullam ut arcu vulputate, ultricies ligula eu, scelerisque urna. Donec quis tellus tortor. Nullam malesuada iaculis ornare. Proin sodales sit amet purus eu aliquet.
           </p>
 
           <div id="latest-tweets">
             Et harum quidem rerum facilis est et expedita distinctio.
-          </div>
-        </div>
+          </div> <!-- ./latest-tweets -->
 
-        <div id="about-timeline" class="col-md-3 col-sm-4">
-          <ul>
-            <li>CESAR</li>
-            <li>BRASILNET</li>
-          </ul>        
-        </div>
+        </div> <!-- ./about-text -->
 
-      </div>
+        <div id="about-timeline" class="col-md-5 col-sm-6">
 
-    </div>
+          <div id="timeline-block">
+
+            <div class="timeline-item">
+
+              <div class="item-img">
+                <i class="fa fa-github-square fa-3x"></i>
+              </div>
+
+              <div class="item-content">
+                <h4>C.E.S.A.R <br><small>September 2011 - Present</small></h4>
+                <p>
+                  In the company, as a systems engineer, i'm not too attached to a particular development platform. We have to quickly adapt to different types of changes and new features that appear throughout the day.
+                </p>
+              </div>
+
+            </div> <!-- ./timeline-item -->
+
+            <div class="timeline-item">
+
+              <div class="item-img">
+                <i class="fa fa-facebook-square fa-3x"></i>
+              </div>
+
+              <div class="item-content">
+                <h4>BRASILNET INFORMÁTICA <br><small>January 2009 - January 2010</small></h4>
+                <p>
+                  During the probationary period he made in Brasilnet Informática, participated in the development of websites, working both in the frontend as in the backend.
+                </p>
+              </div>
+
+            </div> <!-- ./timeline-item -->
+
+          </div> <!-- ./timeline-block -->
+
+        </div> <!-- ./about-timeline -->
+
+      </div> <!-- ./row -->
+
+    </div> <!-- ./container -->
+
+  </section> <!-- ./about-me -->
+
+  <!--######################################-->
+
+  <section id="skills">
 
   </section>
+
+  <!--######################################-->
+
+
 
   <!--######################################-->
 
   <!-- JAVASCRIPT -->
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script src="js/scroll-to-top.js"></script>
   <!-- ./JAVASCRIPT -->
 </body>
 </html>
