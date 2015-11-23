@@ -9,7 +9,7 @@
   <title>Felipe Vasconcelos (felipe.vasconcelos@live.com)</title>
 
   <!-- CSS -->
-  <link href="../bower_components/normalize-css/normalize.css" rel="stylesheet">
+  <!-- <link href="../bower_components/reset-css/reset.css" rel="stylesheet" /> -->
   <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   
@@ -27,9 +27,9 @@
 
   <!--######################################-->
 
-  <section id="intro" class="text-center">
+  <section id="intro">
 
-    <h1 id="profile-name">Felipe Vasconcelos</h1>
+    <h1 class="section-header">Felipe Vasconcelos</h1>
 
     <img id ="profile-image" src="http://placehold.it/300x300" class="img-responsive center-block" />
 
@@ -71,8 +71,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor, enim non laoreet dignissim, nisl leo scelerisque neque, ut condimentum est dui at nunc. In rhoncus sapien nec sagittis auctor. Morbi sit amet eros et dolor pellentesque malesuada eu at risus. Phasellus feugiat placerat magna, a condimentum ipsum. Suspendisse dapibus dui vitae suscipit ultrices. Ut venenatis fringilla enim vitae tincidunt. Ut nec mauris id est ullamcorper varius. Nunc ut aliquet sem, a imperdiet tellus. Nullam ut arcu vulputate, ultricies ligula eu, scelerisque urna. Donec quis tellus tortor. Nullam malesuada iaculis ornare. Proin sodales sit amet purus eu aliquet.
           </p>
 
-          <div id="latest-tweets">
-            Et harum quidem rerum facilis est et expedita distinctio.
+          <div class="twitter-timeline" data-widget-id="668907274027401216" data-tweet-limit="1" data-chrome="noheader nofooter noborders noscrollbar" data-theme="light" >
           </div> <!-- ./latest-tweets -->
 
         </div> <!-- ./about-text -->
@@ -92,6 +91,12 @@
                 <p>
                   In the company, as a systems engineer, i'm not too attached to a particular development platform. We have to quickly adapt to different types of changes and new features that appear throughout the day.
                 </p>
+                <ul class="tags">
+                  <li>Android</li>
+                  <li>iOS</li>
+                  <li>Node.JS</li>
+                  <li>GIT</li>
+                </ul>
               </div>
 
             </div> <!-- ./timeline-item -->
@@ -107,6 +112,13 @@
                 <p>
                   During the probationary period he made in Brasilnet Informática, participated in the development of websites, working both in the frontend as in the backend.
                 </p>
+                <ul class="tags">
+                  <li>HTML</li>
+                  <li>Javascript</li>
+                  <li>CSS</li>
+                  <li>PHP</li>
+                  <li>SVN</li>
+                </ul>
               </div>
 
             </div> <!-- ./timeline-item -->
@@ -125,6 +137,8 @@
 
   <section id="skills">
 
+    <h1 class="section-header">Skills</h1>
+
   </section>
 
   <!--######################################-->
@@ -138,6 +152,7 @@
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
   <script src="js/scroll-to-top.js"></script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   <!-- ./JAVASCRIPT -->
 </body>
 </html>

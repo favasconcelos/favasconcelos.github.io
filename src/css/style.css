@@ -4,17 +4,25 @@ body {
 
 section {
 	height: auto;
-	padding: 16px 0px;
+}
+
+h1,
+section,
+ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+.section-header {
+	font-size: 70px;
+	margin-top: 8px;
 }
 
 /*######################################*/
-
 #intro {
 	background-color: #2F4254;
-}
-
-h1#profile-name {
-	font-size: 70px;
+	padding: 16px 0px;
+	text-align: center;
 }
 
 img#profile-image {
@@ -23,14 +31,14 @@ img#profile-image {
 }
 
 ul#profile-link {
-	margin: 64px 0px;
+	margin: 64px auto;
 	list-style: none;
 	color: #111;
 }
 
 ul#profile-link li {
 	display: inline;
-	margin-right: 32px;
+	margin: 0px 16px;
 }
 
 ul#profile-link a {
@@ -45,7 +53,6 @@ ul#profile-link a:hover {
 }
 
 /*######################################*/
-
 #about-me {
 	background-color: #34495E;
 }
@@ -54,6 +61,7 @@ h3#about-name {
 	padding-bottom: 5px;
 	margin-right: 16px;
 	border-bottom: 3px solid #E1E1E1;
+
 }
 
 #latest-tweets {
@@ -62,4 +70,27 @@ h3#about-name {
 	border-radius: 6px;
 	height: 100px;
 	padding: 8px;
+}
+
+ul.tags {
+	list-style: none;
+	line-height: 30px;
+	border: 0px;
+	font-size: 12px;
+}
+
+ul.tags li {
+	display: inline;
+	border-radius: 5px;
+	background-color: #16A085;
+	padding: 5px;
+	text-align: center;
+	margin-right: 2px;
+	color: #FFFFFF;
+	border: 0px;
+}
+
+/*######################################*/
+#skills {
+	text-align: center;
 }

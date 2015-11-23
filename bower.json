@@ -20,6 +20,6 @@
     "bootstrap": "~3.3.5",
     "jquery": "~2.1.4",
     "font-awesome": "fontawesome#~4.4.0",
-    "normalize-css": "normalize.css#~3.0.3"
+    "reset-css": "~2.0.2011012602"
   }
 }
