@@ -21,6 +21,7 @@
     "jquery": "~2.1.4",
     "font-awesome": "fontawesome#~4.4.0",
     "reset-css": "~2.0.2011012602",
-    "wow": "wowjs#~1.1.2"
+    "wow": "wowjs#~1.1.2",
+    "holderjs": "~2.9.0"
   }
 }
