@@ -4,10 +4,10 @@ body {
 
 section {
 	height: auto;
+	padding: 16px 0px;
 }
 
 h1,
-section,
 ul {
 	padding: 0px;
 	margin: 0px;
@@ -15,13 +15,20 @@ ul {
 
 .section-header {
 	font-size: 70px;
-	margin-top: 8px;
+	text-align: center;
+	padding: 8px 0px;
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+	h1.section-header {
+		font-size: 50px;
+	}
 }
 
 /*######################################*/
 #intro {
 	background-color: #2F4254;
-	padding: 16px 0px;
 	text-align: center;
 }
 
@@ -92,5 +99,32 @@ ul.tags li {
 
 /*######################################*/
 #skills {
+	background-color: #2F4254;
 	text-align: center;
+}
+
+div.skill {
+	padding-top: 8px;
+	border-bottom: 1px dashed rgba(204, 204, 204, 0.23);
+}
+
+div.skill i {
+	color: #16A085;
+	margin-bottom: 8px;
+}
+
+.highlight {
+	border-bottom: 3px solid #16A085;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+/*######################################*/
+#contact {
+	background-color: #34495E;
+	text-align: center;
+}
+
+#contact .fa {
+	color: #16A085;
 }
