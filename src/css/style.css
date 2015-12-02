@@ -22,35 +22,43 @@ ul {
 	text-shadow: 1px 1px #16A085;
 }
 
-/* Extra Small Devices, Phones */ 
-@media only screen and (max-width : 480px) {
+/* Extra Small Devices, Phones */
+@media only screen and (max-width:480px) {
 	h1.section-header {
 		font-size: 50px;
 	}
+
 }
 
 .highlight {
 	border-bottom: 3px solid #16A085;
 	font-weight: 600;
-	font-size: 14px;
-	/*color: #16A085;*/
+	font-size: 14px;	/*color: #16A085;*/
 }
 
 /*######################################*/
 #intro {
 	background-color: #2F4254;
-	text-align: center;
+	padding-top: 64px;
 }
 
-img#profile-image {
-	margin-top: 64px;
-	max-height: 350px;
+#intro .info {
+	text-align: right;
+}
+
+#intro .profile-image {
+	text-align: left;
+}
+
+#intro .profile-image img {
+	max-height: 250px;
 }
 
 ul#profile-link {
 	margin: 64px auto;
 	list-style: none;
 	color: #111;
+	text-align: center;
 }
 
 ul#profile-link li {
@@ -78,7 +86,6 @@ h3#about-name {
 	padding-bottom: 5px;
 	margin-right: 16px;
 	border-bottom: 3px solid #E1E1E1;
-
 }
 
 ul.tags {
@@ -113,15 +120,16 @@ div.project-item {
 	max-width: 300px;
 }
 
-div.project-item img { 
+div.project-item img {
 	border-radius: 8px;
 }
 
-/* Extra Small Devices, Phones */ 
-@media only screen and (max-width : 970px) {
+/* Extra Small Devices, Phones */
+@media only screen and (max-width:970px) {
 	div.project-item {
 		padding: 16px 8px;
 	}
+
 }
 
 /*######################################*/
@@ -130,16 +138,14 @@ div.project-item img {
 	text-align: center;
 }
 
-div.skill {
+#skills div.skill {
 	padding-top: 8px;
 }
 
-div.skill i {
+#skills div.skill i {
 	color: #16A085;
 	margin-bottom: 8px;
 }
-
-
 
 /*######################################*/
 #contact {
