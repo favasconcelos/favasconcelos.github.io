@@ -27,13 +27,20 @@ ul {
 	h1.section-header {
 		font-size: 50px;
 	}
-
 }
 
 .highlight {
-	border-bottom: 3px solid #16A085;
+	color: white;
 	font-weight: 600;
-	font-size: 14px;	/*color: #16A085;*/
+	font-size: 14px;
+}
+
+a {
+	color: #16A085;
+}
+
+a:hover {
+	color: white;
 }
 
 /*######################################*/
@@ -90,9 +97,10 @@ h3#about-name {
 
 ul.tags {
 	list-style: none;
-	line-height: 30px;
+	line-height: 25px;
 	border: 0px;
 	font-size: 12px;
+	margin: 8px 0px;
 }
 
 ul.tags li {
@@ -106,22 +114,49 @@ ul.tags li {
 	border: 0px;
 }
 
+ul.tags li a {
+	color: white;
+	text-decoration: underline;
+}
+
+ul.tags li a:hover {
+	color: #0d5d4d;
+}
+
+
 /*######################################*/
 #projects {
 	background-color: #2F4254;
 }
 
 div.project-item {
-	padding: 16px 0px;
+	padding: 8px 0px;
 	margin: 8px auto;
 	background-color: rgba(204, 204, 204, 0.05);
 	border-radius: 8px;
 	text-align: center;
 	max-width: 300px;
+	height: 550px;
+	min-height: 550px;
+}
+
+div.project-item h3 {
+	border-bottom: 1px solid #16A085;
+	width: 70%;
+	margin: 8px auto;
 }
 
 div.project-item img {
+	width: 200px;
+	height: 200px;
 	border-radius: 8px;
+}
+
+div.project-item p {
+	text-align: left;
+	padding: 8px;
+	margin: 0px auto;
+	overflow: hidden;
 }
 
 /* Extra Small Devices, Phones */
@@ -129,7 +164,6 @@ div.project-item img {
 	div.project-item {
 		padding: 16px 8px;
 	}
-
 }
 
 /*######################################*/
