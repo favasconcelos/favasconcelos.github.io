@@ -151,6 +151,7 @@ div.project-item img {
 #contact {
 	background-color: #2F4254;
 	text-align: center;
+	padding-top: 64px;
 }
 
 #contact .fa {
