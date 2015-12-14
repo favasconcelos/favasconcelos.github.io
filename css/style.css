@@ -19,51 +19,57 @@ h1 {
   font-weight: 300;
   font-size: 3.6rem;
   line-height: 130%; }
-  h1 b {
-    font-weight: 500; }
 
-p {
+p.subheader {
   font-weight: 400;
-  font-size: 2rem; }
-  p s {
-    color: #9B9B9B; }
+  font-size: 1.9rem; }
+
+p.copyright {
+  margin-top: 32px;
+  text-align: center; }
 
 span.highlight {
   font-weight: 500; }
 
 div#info-wrapper {
   background-color: transparent; }
-  div#info-wrapper div {
+  div#info-wrapper div#info {
     width: 100%;
     background-color: transparent;
     padding: 30px !important; }
+  div#info-wrapper div#gallery {
+    height: auto; }
+    div#info-wrapper div#gallery p {
+      font-size: 1.4em; }
+    div#info-wrapper div#gallery div {
+      background-color: #E1E1E1; }
+      div#info-wrapper div#gallery div img {
+        width: 100%;
+        height: auto; }
 
 ul.social {
   list-style: none;
   padding: 0;
-  margin-top: 32px;
+  margin-top: 16px;
   text-align: center; }
   ul.social a {
+    color: #4A4A4A;
     text-decoration: none; }
+    ul.social a:hover {
+      color: #979797;
+      text-decoration: none; }
   ul.social li {
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 0.12rem;
-    font-size: 1.2rem;
     display: inline-block;
-    line-height: 150%;
     cursor: pointer;
     color: #A1886B;
     border-bottom: 1px dotted;
-    text-decoration: none;
-    margin-right: 8px; }
+    margin-right: 32px; }
     ul.social li:hover {
-      color: #bfae9a;
+      color: #dcd3c9;
       text-decoration: none; }
 
 div#photo {
   background-color: #1F1E1A;
-  /*background-image: url('../img/photo.jpg');*/
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
@@ -79,7 +85,7 @@ div#photo {
 #right {
   top: 0;
   bottom: 0;
-  width: 15px; }
+  width: 16px; }
 
 #left {
   left: 0; }
@@ -91,7 +97,7 @@ div#photo {
 #bottom {
   left: 0;
   right: 0;
-  height: 15px; }
+  height: 16px; }
 
 #top {
   top: 0; }
@@ -117,6 +123,7 @@ div#photo {
 @media only screen and (max-width: 446px) {
   body {
     background-color: #1F1E1A; }
+  #gallery,
   #top,
   #bottom,
   #left,
@@ -125,7 +132,7 @@ div#photo {
   h1 {
     font-size: 2.6rem;
     line-height: 3rem; }
-  p {
+  p.subheader {
     font-size: 1.6rem; }
   ul.social a {
     cursor: pointer;
@@ -133,16 +140,12 @@ div#photo {
     text-decoration: none;
     border-bottom: none; }
     ul.social a:hover {
-      color: #bfae9a;
+      color: #ff9999;
       text-decoration: none; }
   ul.social li {
     text-align: center;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 0.12rem;
-    font-size: 1.2rem;
     width: 100%;
-    padding: 15px 10px;
+    padding: 16px 8px;
     border: 1px solid;
     margin-bottom: 8px;
     display: block; } }
