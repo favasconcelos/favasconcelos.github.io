@@ -70,9 +70,11 @@ ul.social {
 
 div#photo {
   background-color: #1F1E1A;
-  background-size: cover;
+  background-image: url("../img/profile.png");
+  background-size: contain;
   background-position: center;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  margin: 16px; }
 
 #top,
 #bottom,
