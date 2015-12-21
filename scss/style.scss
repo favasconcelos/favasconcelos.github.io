@@ -128,51 +128,51 @@ div#photo {
 #left,
 #right {
 	background: #201E1B;
-	position: fixed
+	position: fixed;
 }
 
 #left,
 #right {
 	top: 0;
 	bottom: 0;
-	width: 16px
+	width: 16px;
 }
 
 #left {
-	left: 0
+	left: 0;
 }
 
 #right {
-	right: 0
+	right: 0;
 }
 
 #top,
 #bottom {
 	left: 0;
 	right: 0;
-	height: 16px
+	height: 16px;
 }
 
 #top {
-	top: 0
+	top: 0;
 }
 
 #bottom {
-	bottom: 0
+	bottom: 0;
 }
 
 //Media Queries
 @media only screen and (max-width:992px) {
 	body {
-		background-color: #1F1E1A
+		background-color: #1F1E1A;
 	}
 
 	* {
-		color: #FFF
+		color: #FFF;
 	}
 
 	#photo {
-		display: none
+		display: none;
 	}
 
 	#info-wrapper #info {
@@ -183,7 +183,7 @@ div#photo {
 	#bottom,
 	#left,
 	#right {
-		background: #FFF
+		background: #FFF;
 	}
 
 }
