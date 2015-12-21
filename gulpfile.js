@@ -35,7 +35,7 @@ var distPaths = {
 };
 
 var server = {
-	host: '172.24.8.131',
+	host: 'localhost',
 	port: '8080'
 };
 
