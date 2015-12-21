@@ -103,7 +103,7 @@ gulp.task('vendor:js', ['clear:js'], function(){
 	.pipe(concat('vendor.js'))
 	.pipe(uglify())
 	.pipe(rename('vendor.min.js'))
-	.pipe(sourcemaps.write())
+	.pipe(sourcemaps.write('./'))
 	.pipe(gulp.dest(distPaths.vendor.js));
 });
 
