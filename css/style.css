@@ -7,8 +7,7 @@ body {
   font-size: 10px;
   font-family: Roboto, Helvetica, Arial, sans-serif !important;
   line-height: 150%;
-  height: 100%;
-  overflow: hidden; }
+  height: 100%; }
 
 div {
   height: 100%;
@@ -28,24 +27,34 @@ p.copyright {
   margin-top: 32px;
   text-align: center; }
 
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px dashed #4A4A4A;
+  margin: 1em 0;
+  padding: 0; }
+
+div.container-full {
+  margin: auto auto !important; }
+
 span.highlight {
   font-weight: 500; }
 
 div#info-wrapper {
-  background-color: transparent; }
+  background-color: transparent;
+  height: auto; }
+  div#info-wrapper div p {
+    font-size: 1.4em; }
   div#info-wrapper div#info {
+    padding: 30px !important;
     width: 100%;
-    background-color: transparent;
-    padding: 30px !important; }
-  div#info-wrapper div#gallery {
-    height: auto; }
-    div#info-wrapper div#gallery p {
-      font-size: 1.4em; }
-    div#info-wrapper div#gallery div {
-      background-color: #E1E1E1; }
-      div#info-wrapper div#gallery div img {
-        width: 100%;
-        height: auto; }
+    background-color: transparent; }
+  div#info-wrapper div#gallery div {
+    background-color: #E1E1E1; }
+    div#info-wrapper div#gallery div img {
+      width: 100%;
+      height: auto; }
 
 ul.social {
   list-style: none;
@@ -70,11 +79,10 @@ ul.social {
 
 div#photo {
   background-color: #1F1E1A;
-  background-image: url("../img/profile.png");
+  background-image: url("../img/profile.jpg");
   background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 16px; }
+  background-position: left;
+  background-repeat: no-repeat; }
 
 #top,
 #bottom,
@@ -107,14 +115,14 @@ div#photo {
 #bottom {
   bottom: 0; }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 992px) {
   body {
     background-color: #1F1E1A; }
   * {
     color: #FFF; }
   #photo {
     display: none; }
-  #info-wrapper {
+  #info-wrapper #info {
     background-color: #1F1E1A; }
   #top,
   #bottom,
@@ -122,20 +130,29 @@ div#photo {
   #right {
     background: #FFF; } }
 
-@media only screen and (max-width: 446px) {
+@media only screen and (max-width: 768px) {
   body {
     background-color: #1F1E1A; }
+  .separator,
   #gallery,
   #top,
   #bottom,
   #left,
   #right {
     display: none !important; }
+  #left,
+  #right {
+    width: 8px; }
+  #top,
+  #bottom {
+    height: 8px; }
   h1 {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     line-height: 3rem; }
   p.subheader {
-    font-size: 1.6rem; }
+    font-size: 1.5rem; }
+  div#info-wrapper div#info {
+    padding: 20px !important; }
   ul.social a {
     cursor: pointer;
     color: #A1886B;
