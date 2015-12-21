@@ -3,15 +3,13 @@
   "version": "1.0.0",
   "description": "TODO :)",
   "main": "index.js",
-  "dependencies": {
-    "gulp": "^3.9.0",
-    "gulp-webserver": "^0.9.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.1.1",
     "gulp-webserver": "^0.9.1",
+    "main-bower-files": "^2.11.0",
     "opn": "^3.0.3"
   },
   "scripts": {
