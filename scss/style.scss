@@ -101,14 +101,14 @@ ul.social {
 
 	li {
 		display: inline-block;
-		cursor: pointer;
 		color: #A1886B;
-		border-bottom: 1px dotted;
+		border-bottom: 2px solid;
+		padding-bottom: 3px;
 		margin-right: 32px;
 
 		&:hover {
 			color: lighten(#A1886B, 30%);
-			text-decoration: none
+			text-decoration: none;
 		}
 
 	}
@@ -232,6 +232,9 @@ div#photo {
 			text-decoration: none;
 			border-bottom: none;
 
+			padding: 12px;
+			display: block;
+
 			&:hover {
 				color: lighten(red, 30%);
 				text-decoration: none;
@@ -242,9 +245,8 @@ div#photo {
 		li {
 			text-align: center;
 			width: 100%;
-			padding: 16px 8px;
 			border: 1px solid;
-			margin-bottom: 8px;
+			margin-bottom: 10px;
 			display: block;
 		}
 
