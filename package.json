@@ -15,7 +15,7 @@
     "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^3.0.0",
     "gulp-webserver": "^0.9.1",
-    "opn": "^4.0.2"
+    "opn": "^5.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
