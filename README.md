@@ -4,7 +4,7 @@ Here you will find links to where you can find me on social media and some info 
 
  [![ic-linkedin]](https://br.linkedin.com/in/felipevasconcelos)
  [![ic-github]](https://github.com/favasconcelos)
- [![ic-skype]](skype:vasconcelos90.felipe?call)
+ [![ic-skype]](skype:vasconcelos90.felipe)
  [![ic-facebook]](https://www.facebook.com/vasconcelos.felipe)
  [![ic-twitter]](https://www.twitter.com/favasconcelos)
  [![ic-email]](mailto:felipe.vasconcelos@live.com)
