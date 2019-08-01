@@ -1,0 +1,12 @@
+#photos {
+  display: flex;
+  flex-flow: row nowrap;
+  img {
+    flex: 1 1 0;
+    width: 0;
+  }
+  /* gap between images */
+  & > * + * {
+    margin-left: 8px;
+  }
+}
