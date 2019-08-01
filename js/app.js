@@ -1,9 +1,9 @@
 'use strict';
 
-var app = {
+const app = {
 
-	init: function() {
-		new WOW().init();
-	}
+  init: function () {
+    new WOW().init();
+  }
 
 };

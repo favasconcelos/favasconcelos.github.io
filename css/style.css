@@ -4,9 +4,9 @@
 html,
 body {
   color: #4A4A4A;
-  font-size: 10px;
+  font-size: 1rem;
+  line-height: 1rem;
   font-family: Roboto, Helvetica, Arial, sans-serif !important;
-  line-height: 150%;
   height: 100%; }
 
 div {
@@ -16,16 +16,17 @@ div {
 
 h1 {
   font-weight: 300;
-  font-size: 3.6rem;
+  font-size: 2.5rem;
   line-height: 130%; }
 
 p.subheader {
   font-weight: 400;
-  font-size: 1.9rem; }
+  font-size: 1.1rem; }
 
 p.copyright {
   margin-top: 32px;
-  text-align: center; }
+  text-align: center;
+  font-size: 0.8rem; }
 
 hr {
   display: block;
@@ -43,9 +44,8 @@ span.highlight {
 
 div#info-wrapper {
   background-color: transparent;
-  height: auto; }
-  div#info-wrapper div p {
-    font-size: 1.4em; }
+  height: auto;
+  font-size: 1rem; }
   div#info-wrapper div#info {
     padding: 30px !important;
     width: 100%;
@@ -60,7 +60,8 @@ ul.social {
   list-style: none;
   padding: 0;
   margin-top: 16px;
-  text-align: center; }
+  text-align: center;
+  font-size: 0.7rem; }
   ul.social a {
     color: #4A4A4A;
     text-decoration: none; }

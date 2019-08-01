@@ -1,112 +1,139 @@
-var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var sass = require('gulp-sass');
-var webserver = require('gulp-webserver');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
-var minifyCss = require('gulp-minify-css');
-var opn = require('opn');
-var del = require('del');
+const gulp = require('gulp');
+const plumber = require('gulp-plumber');
+const gSass = require('gulp-sass');
+const gWebserver = require('gulp-webserver');
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
+const sourcemaps = require('gulp-sourcemaps');
+const opn = require('opn');
+const del = require('del');
 
-var bowerDir = 'bower_components/';
+const bowerDir = 'bower_components/';
 
-var sourcePaths = {
-	css: ['scss/**/*.scss'],
-	bower: {
-		js : [
-		bowerDir+'jquery/dist/jquery.min.js', 
-		bowerDir+'bootstrap/dist/js/bootstrap.min.js', 
-		bowerDir+'wow/dist/wow.min.js'
-		],
-		css: [
-		bowerDir+'bootstrap/dist/css/bootstrap.min.css', 
-		bowerDir+'bootstrap/dist/css/bootstrap-theme.min.css', 
-		bowerDir+'wow/css/libs/animate.css',
-		bowerDir+'font-awesome/css/font-awesome.min.css'
-		],
-		fonts: [bowerDir+'font-awesome/fonts/*']
-	}
+const sourcePaths = {
+  css: ['scss/**/*.scss'],
+  bower: {
+    js: [
+      bowerDir + 'jquery/dist/jquery.min.js',
+      bowerDir + 'bootstrap/dist/js/bootstrap.min.js',
+      bowerDir + 'wow/dist/wow.min.js'
+    ],
+    css: [
+      bowerDir + 'bootstrap/dist/css/bootstrap.min.css',
+      bowerDir + 'bootstrap/dist/css/bootstrap-theme.min.css',
+      bowerDir + 'wow/css/libs/animate.css',
+      bowerDir + 'font-awesome/css/font-awesome.min.css'
+    ],
+    fonts: [bowerDir + 'font-awesome/fonts/*']
+  }
 };
 
-var distPaths = {
-	css: 'css',
-	vendor: {
-		js: 'vendor/js/',
-		css: 'vendor/css/',
-		fonts: 'vendor/fonts/'
-	}
+const distPaths = {
+  css: 'css',
+  vendor: {
+    js: 'vendor/js/',
+    css: 'vendor/css/',
+    fonts: 'vendor/fonts/'
+  }
 };
 
-var server = {
-	host: 'localhost',
-	port: '8080'
+const server = {
+  host: 'localhost',
+  port: '8080'
 };
 
-gulp.task('sass', function() {
-	gulp.src(sourcePaths.css)
-	.pipe(plumber())
-	.pipe(sass())
-	.pipe(gulp.dest(distPaths.css));
-});
+function sass(cb) {
+  gulp.src(sourcePaths.css)
+    .pipe(plumber())
+    .pipe(gSass())
+    .pipe(gulp.dest(distPaths.css));
+  cb();
+}
 
-gulp.task('webserver', function() {
-	gulp.src('.')
-	.pipe(webserver({
-		host: server.host,
-		port: server.port,
-		livereload: true,
-		directoryListing: false
-	}));
-});
+function webserver(cb) {
+  gulp.src('.')
+    .pipe(gWebserver({
+      host: server.host,
+      port: server.port,
+      livereload: true,
+      directoryListing: false
+    }));
+  cb();
+}
 
-gulp.task('openbrowser', function() {
-	opn('http://' + server.host + ':' + server.port);
-});
+function openbrowser(cb) {
+  opn('http://' + server.host + ':' + server.port);
+  cb();
+}
 
-gulp.task('watch', function() {
-	gulp.watch(sourcePaths.css, ['sass']);
-});
+function watch(cb) {
+  gulp.watch(sourcePaths.css, sass);
+  cb();
+}
 
 // CLEAR TASKS
 
-gulp.task('clear:js', function(){
-	return del([distPaths.vendor.js]);
-});
+function clearJS(cb) {
+  del([distPaths.vendor.js]);
+  cb();
+}
 
-gulp.task('clear:css', function(){
-	return del([distPaths.vendor.css]);
-});
 
-gulp.task('clear:fonts', function(){
-	return del([distPaths.vendor.fonts]);
-});
+function clearCSS(cb) {
+  del([distPaths.vendor.css]);
+  cb();
+}
+
+function clearFonts(cb) {
+  del([distPaths.vendor.fonts]);
+  cb();
+}
 
 // VENDOR TASKS
 
-gulp.task('vendor', ['vendor:js', 'vendor:css', 'vendor:fonts'], function(){});
+function vendor(cb) {
+  gulp.series(vendorJS, vendorCSS, vendorFonts);
+  cb();
+}
 
-gulp.task('vendor:fonts', ['clear:fonts'], function() {
-	return gulp.src(sourcePaths.bower.fonts)
-	.pipe(gulp.dest(distPaths.vendor.fonts));
-});
+function vendorFonts(cb) {
+  gulp.series(clearFonts, function (callback) {
+    gulp.src(sourcePaths.bower.fonts)
+      .pipe(gulp.dest(distPaths.vendor.fonts));
+    callback();
+  });
+  cb();
+}
 
-gulp.task('vendor:css', ['clear:css'], function(){
-	return gulp.src(sourcePaths.bower.css)
-	.pipe(gulp.dest(distPaths.vendor.css));
-});
+function vendorCSS(cb) {
+  gulp.series(clearCSS, function (callback) {
+    gulp.src(sourcePaths.bower.css)
+      .pipe(gulp.dest(distPaths.vendor.css));
+    callback();
+  });
+  cb();
+}
 
-gulp.task('vendor:js', ['clear:js'], function(){
-	return gulp.src(sourcePaths.bower.js)
-	.pipe(sourcemaps.init())
-	.pipe(concat('vendor.js'))
-	.pipe(uglify())
-	.pipe(rename('vendor.min.js'))
-	.pipe(sourcemaps.write('./'))
-	.pipe(gulp.dest(distPaths.vendor.js));
-});
+function vendorJS(cb) {
+  gulp.series(clearJS, function (callback) {
+    gulp.src(sourcePaths.bower.js)
+      .pipe(sourcemaps.init())
+      .pipe(concat('vendor.js'))
+      .pipe(uglify())
+      .pipe(rename('vendor.min.js'))
+      .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest(distPaths.vendor.js));
+    callback();
+  });
+  cb();
+}
 
-gulp.task('build', ['sass', 'vendor']);
+function build(cb) {
+  gulp.series(sass, vendor);
+  cb();
+}
 
-gulp.task('default', ['build', 'webserver', 'watch', 'openbrowser']);
+exports.default = gulp.series(build, webserver, watch, openbrowser);
+
+// gulp.task('default', ['build', 'webserver', 'watch', 'openbrowser']);
