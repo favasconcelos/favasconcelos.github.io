@@ -1,0 +1,28 @@
+#social {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  a {
+    max-width: 32px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #4A4A4A;
+
+    &:hover {
+      border-bottom: 2px solid #979797;
+      svg {
+        fill: #979797;
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: #4A4A4A;
+    }
+  }
+  /* gap between images */
+  & > * + * {
+    margin-left: 32px;
+  }
+  
+}

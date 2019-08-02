@@ -9,37 +9,5 @@
 
   #info {
     flex: 1;
-    padding: 24px;
-
-    h1 {
-      font-weight: 300;
-      line-height: 1.2em;
-    }
-
-    h3 {
-      font-weight: 300;
-      margin-top: 16px;
-    }
-
-    .flag {
-      width: 1em;
-      height: 1em;
-      margin: 2px 4px 4px 4px;
-      vertical-align: middle;
-    }
-
-    #separator {
-      display: block;
-      height: 1px;
-      border: 0;
-      border-top: 1px dashed #4a4a4a;
-      margin: 1em 0;
-      padding: 0;
-    }
-
-    #copyright {
-      align-self: flex-end;
-      justify-self: flex-end;
-    }
   }
 }
