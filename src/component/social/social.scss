@@ -49,7 +49,7 @@
   }
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (max-width: 767px) and (orientation: landscape) {
   #social {
     a {
       width: calc(50% - 16px);
