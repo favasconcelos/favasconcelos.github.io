@@ -1,9 +1,9 @@
 import React from 'react';
 // local
 import './profile.scss';
+// image
+import imgProfile from '../../_assets/photos/profile.jpg';
 
-const Profile: React.FC = () => {
-  return <img id="profile" src="https://avasconcelos.com/img/profile.jpg" alt="Felipe Vasconcelos" />;
-};
+const Profile: React.FC = () => <img id="profile" src={imgProfile} alt="Felipe Vasconcelos" />;
 
 export default Profile;

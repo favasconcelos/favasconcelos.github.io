@@ -41,6 +41,9 @@
 
       &:hover {
         border: 1px solid #fff;
+        svg {
+          fill: #fff;
+        }
       }
     }
   }
