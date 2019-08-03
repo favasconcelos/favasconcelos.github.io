@@ -48,3 +48,12 @@
     }
   }
 }
+
+@media screen and (orientation: landscape) {
+  #social {
+    a {
+      width: calc(50% - 16px);
+      margin: 8px;
+    }
+  }
+}

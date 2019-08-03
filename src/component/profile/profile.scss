@@ -3,7 +3,7 @@
   max-width: 300px;
   height: 100%;
   object-fit: cover;
-  filter: drop-shadow(0px 0px 5px rgba(32, 30, 27, 1));
+  border-left: 1px solid #201e1b;
 }
 
 @media screen and (min-width: 1024px) {
