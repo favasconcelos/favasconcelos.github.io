@@ -4,9 +4,10 @@ import './info.scss';
 import Photos from '../photos';
 import Social from '../social';
 
+import Born from '../icon/Born';
+import Home from '../icon/Home';
+
 // images
-import icBorn from '../../_assets/ic_born.svg';
-import icHome from '../../_assets/ic_home.svg';
 import flagBR from '../../_assets/flag_brazil.svg';
 import flagES from '../../_assets/flag_spain.svg';
 
@@ -18,11 +19,11 @@ const Info: React.FC = () => {
           Felipe Vasconcelos is a <span className="bold">Software Developer</span>
         </h1>
         <h3>
-          <img src={icBorn} className="icon" alt="Born in" title="Born in" />
+          <Born />
           <span className="bold">Recife</span>
           <img src={flagBR} className="icon" alt="Brazil" title="Brazil" />
           {' -- '}
-          <img src={icHome} className="icon" alt="Living in" title="Living in" />
+          <Home />
           <span className="bold">Zaragoza</span>
           <img src={flagES} className="icon" alt="Spain" title="Spain" />
         </h3>

@@ -13,7 +13,7 @@ const Photos: React.FC = () => {
     <div id="photos">
       {PHOTOS.map((photo, i) => {
         const key = `photo-${i}`;
-        return <img key={key} src={photo} />;
+        return <img key={key} src={photo} alt="Photos" />;
       })}
     </div>
   );

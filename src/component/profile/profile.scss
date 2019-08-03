@@ -1,4 +1,19 @@
 #profile {
   width: auto;
+  max-width: 300px;
   height: 100%;
+  object-fit: cover;
+  filter: drop-shadow(0px 0px 5px rgba(32, 30, 27, 1));
+}
+
+@media screen and (min-width: 1024px) {
+  #profile {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #profile {
+    display: none;
+  }
 }

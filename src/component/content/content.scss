@@ -11,3 +11,11 @@
     flex: 1;
   }
 }
+
+@media screen and (max-width: 767px) {
+  #content {
+    margin: 0;
+    background-color: #201e1b;
+    color: #fff;
+  }
+}
