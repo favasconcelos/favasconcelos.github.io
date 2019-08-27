@@ -1,7 +1,7 @@
 {
   "extends": ["config:base"],
   "assignees": ["favasconcelos"],
-  "baseBranches": ["develop"],
+  "baseBranches": ["new_project"],
   "automerge": true,
   "major": {
     "automerge": false
