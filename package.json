@@ -24,7 +24,7 @@
   "scripts": {
     "build": "react-scripts build",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -b master -d build --git $(which git)",
+    "deploy": "sh ./deploy.sh",
     "eject": "react-scripts eject",
     "lint:fix": "eslint --fix './src/**/*.{ts,tsx}'",
     "start": "react-scripts start",
