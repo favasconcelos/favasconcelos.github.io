@@ -1,9 +1,3 @@
 {
-  "extends": ["config:base"],
-  "assignees": ["favasconcelos"],
-  "baseBranches": ["develop"],
-  "automerge": true,
-  "major": {
-    "automerge": false
-  }
+  "extends": ["github>favasconcelos/renovate-config"]
 }
