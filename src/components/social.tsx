@@ -17,7 +17,7 @@ const LINKS = [
 
 export default function Social() {
   return (
-    <div className="flex flex-row justify-center gap-8 max-md:flex-col max-md:gap-0 max-md:mt-4 max-[767px]:landscape:flex-row max-[767px]:landscape:flex-wrap max-[767px]:landscape:justify-center">
+    <div className="flex flex-row justify-center gap-8 max-md:flex-col max-md:gap-2 max-md:mt-4 max-[767px]:landscape:flex-row max-[767px]:landscape:flex-wrap max-[767px]:landscape:justify-center">
       {LINKS.map((link, i) => {
         const key = `link-${i}`;
         return (

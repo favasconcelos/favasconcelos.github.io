@@ -7,7 +7,7 @@ import flagES from "@/assets/flag-spain.svg";
 
 export default function Info() {
   return (
-    <div className="p-6 flex flex-col flex-1">
+    <div className="p-6 md:pt-10 md:pb-10 flex flex-col flex-1">
       <div className="flex-1 max-md:text-center">
         <h1 className="font-light leading-[1.2] max-[374px]:text-[1.6em]">
           Felipe Vasconcelos is a{" "}
@@ -37,7 +37,7 @@ export default function Info() {
         <hr className="hidden md:block border-0 border-t border-dashed border-[#4a4a4a] my-8" />
         <Social />
       </div>
-      <div className="flex-none text-[0.7em] font-light w-full flex items-center justify-center mb-2 max-md:mb-0">
+      <div className="flex-none text-[0.7em] font-light w-full flex items-center justify-center mb-2 max-md:mb-4 max-md:mt-4">
         COPYRIGHT © 2015 - FELIPE VASCONCELOS
       </div>
     </div>
