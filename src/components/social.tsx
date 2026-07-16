@@ -17,7 +17,7 @@ const LINKS = [
 
 export default function Social() {
   return (
-    <div className="flex flex-row justify-center gap-8 max-md:flex-col max-md:gap-2 max-md:mt-4 max-[767px]:landscape:flex-row max-[767px]:landscape:flex-wrap">
+    <div className="flex flex-row justify-center gap-8 max-md:flex-col max-md:gap-0 max-md:mt-4 max-[767px]:landscape:flex-row max-[767px]:landscape:flex-wrap max-[767px]:landscape:justify-center">
       {LINKS.map((link, i) => {
         const key = `link-${i}`;
         return (
@@ -27,7 +27,7 @@ export default function Social() {
             title={link.type}
             target="_blank"
             rel="noopener noreferrer"
-            className="pb-1 border-b-2 border-[#4a4a4a] [&>svg]:w-6 [&>svg]:h-6 [&>svg]:fill-[#4a4a4a] hover:border-[#979797] hover:[&>svg]:fill-[#979797] max-md:w-full max-md:p-2 max-md:pb-2 max-md:border max-md:border-[#4a4a4a] max-md:hover:border-white max-md:[&>svg]:fill-white max-md:hover:[&>svg]:fill-white max-[767px]:landscape:w-[calc(50%-0.5rem)]"
+            className="pb-1 border-b-2 border-[#4a4a4a] [&>svg]:w-6 [&>svg]:h-6 [&>svg]:fill-[#4a4a4a] hover:border-[#979797] hover:[&>svg]:fill-[#979797] max-md:w-full max-md:px-2 max-md:py-2 max-md:my-1 max-md:border max-md:border-[#4a4a4a] max-md:hover:border-white max-md:[&>svg]:fill-white max-md:hover:[&>svg]:fill-white max-[767px]:landscape:w-[calc(50%-1rem)] max-[767px]:landscape:m-2"
           >
             <Icon type={link.type} />
           </a>
