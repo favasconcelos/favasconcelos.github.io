@@ -9,7 +9,7 @@ on:
 
 jobs:
   ci:
-    name: Lint, Type-check & Build
+    name: Lint, Format, Type-check & Build
     runs-on: ubuntu-latest
 
     steps:
@@ -27,6 +27,9 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Format check
+        run: npm run fmt:check
 
       - name: Build
         run: npm run build
