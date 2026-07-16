@@ -2,7 +2,7 @@ import Icon, { IconType } from "@/components/icon/icon";
 
 const LINKS = [
   {
-    href: "https://docs.google.com/document/d/1aFEFAoAMlutgEA2BJHqXNr8_M7Mk-ZaiJVgdwPGOneM/edit",
+    href: "https://drive.google.com/file/d/1u4MOtXESS_GmHKQyBbY5wTmtfn_D4Moh/view?usp=sharing",
     type: IconType.RESUME,
   },
   {
