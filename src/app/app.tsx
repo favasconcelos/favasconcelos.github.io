@@ -1,15 +1,11 @@
-import React from 'react';
-// local
-import Borders from '../component/borders';
-import Content from '../component/content';
+import Borders from "@/components/borders/borders";
+import Content from "@/components/content/content";
 
-const App: React.FC = () => {
+export default function App() {
   return (
-    <React.Fragment>
+    <>
       <Content />
       <Borders />
-    </React.Fragment>
+    </>
   );
-};
-
-export default App;
+}

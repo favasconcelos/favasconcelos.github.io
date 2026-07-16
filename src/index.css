@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -17,8 +19,4 @@ body {
   color: #4a4a4a;
   background-color: #201e1b;
   overflow: hidden;
-}
-
-.bold {
-  font-weight: bold;
 }

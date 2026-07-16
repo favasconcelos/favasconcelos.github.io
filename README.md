@@ -1,15 +1,36 @@
-# portfolio
+# avasconcelos.com
 
-Here you will find links to where you can find me on social media and some info about myself.
+Personal website for Felipe Vasconcelos — built with React, TypeScript, Vite, and Tailwind CSS.
 
-[![ic-linkedin]](https://br.linkedin.com/in/felipevasconcelos)
-[![ic-github]](https://github.com/favasconcelos)
-[![ic-skype]](skype:vasconcelos90.felipe)
-[![ic-twitter]](https://www.twitter.com/favasconcelos)
-[![ic-email]](mailto:felipe.vasconcelos@live.com)
+**Live**: [avasconcelos.com](https://avasconcelos.com)
 
-[ic-email]: https://cdn0.iconfinder.com/data/icons/social-15/200/mail-icon-24.png
-[ic-github]: https://cdn3.iconfinder.com/data/icons/free-social-icons/67/github_circle_color-24.png
-[ic-skype]: https://cdn3.iconfinder.com/data/icons/free-social-icons/67/skype_circle_color-24.png
-[ic-linkedin]: https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_color-24.png
-[ic-twitter]: https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-24.png
+## Tech Stack
+
+- **React 19** — UI
+- **TypeScript 5** — type safety
+- **Vite 6** — build tool
+- **Tailwind CSS 4** — styling
+- **oxlint** — linting
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+## Scripts
+
+| Command           | Description                      |
+| ----------------- | -------------------------------- |
+| `npm run dev`     | Start dev server                 |
+| `npm run build`   | Type-check + production build    |
+| `npm run preview` | Preview production build locally |
+| `npm run lint`    | Lint with oxlint                 |
+
+## Deployment
+
+Automated via GitHub Actions on every push to `main`:
+
+- **CI** — lint + build on every push/PR
+- **CD** — deploys to GitHub Pages (`gh-pages` branch)
