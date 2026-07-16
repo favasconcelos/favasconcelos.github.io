@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.11",
+    "@tsconfig/node24": "24.0.4",
     "@types/node": "26.1.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.5",
