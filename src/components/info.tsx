@@ -1,5 +1,5 @@
-import Photos from "@/components/photos/photos";
-import Social from "@/components/social/social";
+import Photos from "@/components/photos";
+import Social from "@/components/social";
 import Born from "@/components/icon/born";
 import Home from "@/components/icon/home";
 import flagBR from "@/assets/flag-brazil.svg";

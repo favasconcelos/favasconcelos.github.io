@@ -1,5 +1,5 @@
-import Profile from "@/components/profile/profile";
-import Info from "@/components/info/info";
+import Profile from "@/components/profile";
+import Info from "@/components/info";
 
 export default function Content() {
   return (
