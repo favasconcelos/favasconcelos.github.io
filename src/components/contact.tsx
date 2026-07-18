@@ -1,4 +1,4 @@
-import Icon, { IconType } from '@/components/icon/icon';
+import { Icon, IconType } from '@/components/icon';
 
 const LINKS = [
   {
@@ -15,7 +15,7 @@ const LINKS = [
   },
 ] as const;
 
-export default function Contact() {
+export function Contact() {
   return (
     <footer className="border-border border-t">
       <div className="mx-auto max-w-3xl px-6 py-16">

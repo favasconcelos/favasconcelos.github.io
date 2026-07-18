@@ -1,4 +1,4 @@
-export default function Skype() {
+export function Skype() {
   return (
     <svg x="0px" y="0px" viewBox="0 0 329.978 329.978" aria-hidden="true">
       <g>

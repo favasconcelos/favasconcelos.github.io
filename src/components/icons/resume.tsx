@@ -1,4 +1,4 @@
-export default function Resume() {
+export function Resume() {
   return (
     <svg x="0px" y="0px" viewBox="0 0 60 60" aria-hidden="true">
       <g>

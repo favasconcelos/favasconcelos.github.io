@@ -1,5 +1,5 @@
-import Content from '@/components/content';
+import { Content } from '@/components/content';
 
-export default function App() {
+export function App() {
   return <Content />;
 }

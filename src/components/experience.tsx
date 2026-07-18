@@ -52,7 +52,7 @@ const ROLES = [
   },
 ] as const;
 
-export default function Experience() {
+export function Experience() {
   return (
     <section className="mx-auto max-w-3xl px-6 py-16" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}>
       <div className="reveal">

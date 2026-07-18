@@ -5,7 +5,7 @@ const HERO_IMAGES = [
   { webp: '/frevo2.webp', jpg: '/frevo2.jpg' },
 ] as const;
 
-export default function Hero() {
+export function Hero() {
   const image = useMemo(() => HERO_IMAGES[Math.floor(Math.random() * HERO_IMAGES.length)], []);
 
   return (

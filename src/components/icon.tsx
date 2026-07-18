@@ -1,11 +1,11 @@
 import type { JSX } from 'react';
 
-import Email from './email';
-import Github from './github';
-import LinkedIn from './linked-in';
-import Resume from './resume';
-import Skype from './skype';
-import Twitter from './twitter';
+import { Email } from './icons/email';
+import { Github } from './icons/github';
+import { LinkedIn } from './icons/linked-in';
+import { Resume } from './icons/resume';
+import { Skype } from './icons/skype';
+import { Twitter } from './icons/twitter';
 
 export enum IconType {
   RESUME = 'Resume',
@@ -20,7 +20,7 @@ type IconProps = {
   type: IconType;
 };
 
-export default function Icon({ type }: IconProps): JSX.Element | null {
+export function Icon({ type }: IconProps): JSX.Element | null {
   switch (type) {
     case IconType.EMAIL:
       return <Email />;

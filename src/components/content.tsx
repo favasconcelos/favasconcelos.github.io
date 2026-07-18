@@ -1,11 +1,11 @@
-import About from '@/components/about';
-import Contact from '@/components/contact';
-import Experience from '@/components/experience';
-import Hero from '@/components/hero';
-import Skills from '@/components/skills';
+import { About } from '@/components/about';
+import { Contact } from '@/components/contact';
+import { Experience } from '@/components/experience';
+import { Hero } from '@/components/hero';
+import { Skills } from '@/components/skills';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
-export default function Content() {
+export function Content() {
   const containerRef = useScrollReveal();
 
   return (

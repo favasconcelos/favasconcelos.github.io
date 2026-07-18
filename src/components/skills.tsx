@@ -25,7 +25,7 @@ const SKILL_GROUPS = [
   },
 ] as const;
 
-export default function Skills() {
+export function Skills() {
   return (
     <section className="mx-auto max-w-3xl px-6 py-16" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }}>
       <div className="reveal">
