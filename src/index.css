@@ -1,22 +1,164 @@
 @import "tailwindcss";
 
+@theme {
+  --color-bg: #0f1117;
+  --color-surface: #1a1d26;
+  --color-accent: #c9a84c;
+  --color-accent-dim: #a68a3a;
+  --color-vermillion: #c23b22;
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-border: #2d3348;
+}
+
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
 body,
 #root {
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  min-height: 100%;
+  color-scheme: dark;
 }
 
 body {
-  font-size: 1em;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #4a4a4a;
-  background-color: #201e1b;
-  overflow: hidden;
+  margin: 0;
+  font-family:
+    "Space Grotesk",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-numeric: tabular-nums;
+  touch-action: manipulation;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #0f1117;
+}
+
+/* ── Focus states ───────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ── Scroll reveal animations ────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children within a revealed section */
+.reveal.visible .reveal-child {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible .reveal-child:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.reveal.visible .reveal-child:nth-child(2) {
+  transition-delay: 0.12s;
+}
+.reveal.visible .reveal-child:nth-child(3) {
+  transition-delay: 0.19s;
+}
+.reveal.visible .reveal-child:nth-child(4) {
+  transition-delay: 0.26s;
+}
+.reveal.visible .reveal-child:nth-child(5) {
+  transition-delay: 0.33s;
+}
+.reveal.visible .reveal-child:nth-child(6) {
+  transition-delay: 0.4s;
+}
+.reveal.visible .reveal-child:nth-child(7) {
+  transition-delay: 0.47s;
+}
+.reveal.visible .reveal-child:nth-child(8) {
+  transition-delay: 0.54s;
+}
+
+.reveal.visible .reveal-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Alternate left/right entry for experience items */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-left.visible,
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal.visible .reveal-child {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
 }
