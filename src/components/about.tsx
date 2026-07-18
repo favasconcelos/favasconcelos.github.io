@@ -1,3 +1,4 @@
+import { Section } from '@/components/section';
 import { useLocale } from '@/i18n/use-locale';
 import { cn } from '@/utils/cn';
 
@@ -6,15 +7,12 @@ export function About() {
   const { about } = messages;
 
   return (
-    <section className="mx-auto max-w-3xl px-6 py-16" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }}>
-      <div className="reveal">
-        <h2 className="text-accent text-xs font-semibold tracking-[0.2em] uppercase">{about.title}</h2>
-      </div>
+    <Section title={about.title} containIntrinsicSize="0 500px">
       {about.paragraphs.map((paragraph, index) => (
         <p key={index} className={cn('reveal text-text-muted text-base leading-relaxed sm:text-lg', index === 0 ? 'mt-6' : 'mt-4')}>
           {paragraph}
         </p>
       ))}
-    </section>
+    </Section>
   );
 }

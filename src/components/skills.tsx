@@ -1,3 +1,4 @@
+import { Section } from '@/components/section';
 import { useLocale } from '@/i18n/use-locale';
 
 export function Skills() {
@@ -5,10 +6,7 @@ export function Skills() {
   const { skills } = messages;
 
   return (
-    <section className="mx-auto max-w-3xl px-6 py-16" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }}>
-      <div className="reveal">
-        <h2 className="text-accent text-xs font-semibold tracking-[0.2em] uppercase">{skills.title}</h2>
-      </div>
+    <Section title={skills.title} containIntrinsicSize="0 400px">
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
         {skills.groups.map((group, groupIndex) => (
           <div key={groupIndex} className="reveal">
@@ -26,6 +24,6 @@ export function Skills() {
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

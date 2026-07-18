@@ -1,3 +1,4 @@
+import { FloatingControl } from '@/components/floating-control';
 import { SUPPORTED_LOCALES } from '@/i18n/types';
 import { useLocale } from '@/i18n/use-locale';
 import { cn } from '@/utils/cn';
@@ -6,8 +7,8 @@ export function LanguageSwitcher() {
   const { locale, setLocale, messages } = useLocale();
 
   return (
-    <div className="fixed top-4 right-4 z-50" role="region" aria-label={messages.languageSwitcher.label}>
-      <div className="bg-surface/90 border-border flex rounded-full border p-1 shadow-sm backdrop-blur-sm">
+    <FloatingControl role="region" aria-label={messages.languageSwitcher.label}>
+      <div className="bg-surface/90 border-border hover:border-accent/50 flex rounded-full border p-1 shadow-sm backdrop-blur-sm transition-colors duration-200">
         {SUPPORTED_LOCALES.map((code) => {
           const active = code === locale;
           return (
@@ -26,6 +27,6 @@ export function LanguageSwitcher() {
           );
         })}
       </div>
-    </div>
+    </FloatingControl>
   );
 }

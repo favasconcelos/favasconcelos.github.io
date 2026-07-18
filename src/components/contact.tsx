@@ -1,4 +1,5 @@
 import { Icon, IconType } from '@/components/icon';
+import { Section } from '@/components/section';
 import { useLocale } from '@/i18n/use-locale';
 
 const LINK_CONFIG = [
@@ -15,10 +16,7 @@ export function Contact() {
 
   return (
     <footer className="border-border border-t">
-      <div className="mx-auto max-w-3xl px-6 py-16">
-        <div className="reveal">
-          <h2 className="text-accent text-xs font-semibold tracking-[0.2em] uppercase">{contact.title}</h2>
-        </div>
+      <Section as="div" title={contact.title} className="py-16">
         <p className="reveal text-text-muted mt-4 text-sm">
           <a href="mailto:f@avasconcelos.com" className="text-text hover:text-accent decoration-border hover:decoration-accent underline underline-offset-4 transition-colors duration-200">
             f@avasconcelos.com
@@ -34,7 +32,7 @@ export function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-text-muted hover:text-accent flex items-center gap-2 text-sm transition-colors duration-200 [&>svg]:h-5 [&>svg]:w-5 [&>svg]:fill-current"
+                className="text-text-muted hover:text-accent flex items-center gap-2 text-sm transition-colors duration-200 [&>svg]:h-5 [&>svg]:w-5"
               >
                 <Icon type={link.type} />
                 <span>{label}</span>
@@ -42,7 +40,7 @@ export function Contact() {
             );
           })}
         </div>
-      </div>
+      </Section>
       <div className="border-border text-text-muted border-t py-6 text-center text-xs">{contact.copyright.replace('{year}', String(year))}</div>
     </footer>
   );
