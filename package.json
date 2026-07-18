@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && rm -f dist/wrangler.json",
+    "build": "tsc -b && vite build && rm -f dist/wrangler.json .wrangler/deploy/config.json",
     "preview": "vite preview",
     "deploy": "wrangler pages deploy ./dist --branch main",
     "deploy:preview": "wrangler pages deploy ./dist",
