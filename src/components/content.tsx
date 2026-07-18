@@ -2,7 +2,6 @@ import { About } from '@/components/about';
 import { Contact } from '@/components/contact';
 import { Experience } from '@/components/experience';
 import { Hero } from '@/components/hero';
-import { LanguageSwitcher } from '@/components/language-switcher';
 import { SectionDivider } from '@/components/section-divider';
 import { Skills } from '@/components/skills';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
@@ -20,7 +19,6 @@ export function Content() {
       >
         {messages.skipToContent}
       </a>
-      <LanguageSwitcher />
       <main ref={containerRef} className="w-full overflow-x-hidden" id="main">
         <Hero />
         <SectionDivider />
