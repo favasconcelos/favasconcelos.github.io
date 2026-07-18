@@ -22,7 +22,7 @@ export function Hero() {
       {/* Gradient overlay for text readability */}
       <div className="from-bg/60 via-bg/40 to-bg dark:from-bg/60 dark:via-bg/40 absolute inset-0 bg-gradient-to-b" aria-hidden="true" />
 
-      <div className="relative z-10">
+      <div className="text-shadow relative z-10">
         <p className="reveal text-text-muted mb-4 text-sm tracking-widest uppercase">{hero.role}</p>
         <h1 className="reveal text-4xl leading-[1.1] font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">Felipe Vasconcelos</h1>
         <div className="reveal from-accent via-vermillion mt-6 h-[2px] w-24 bg-gradient-to-r to-transparent" />

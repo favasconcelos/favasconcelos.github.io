@@ -78,6 +78,10 @@ h6 {
   text-wrap: balance;
 }
 
+@utility text-shadow {
+  text-shadow: 0 1px 2px var(--bg);
+}
+
 ::selection {
   background-color: var(--color-accent);
   color: var(--bg);
