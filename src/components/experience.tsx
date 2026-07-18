@@ -22,12 +22,12 @@ export function Experience() {
 
             {role.sections ? (
               <div className="mt-4 space-y-4">
-                {role.sections.map((section) => (
-                  <div key={section.heading}>
+                {role.sections.map((section, sectionIndex) => (
+                  <div key={sectionIndex}>
                     <h4 className="text-accent/70 mb-1.5 text-xs font-semibold tracking-wider uppercase">{section.heading}</h4>
                     <ul className="space-y-1.5">
-                      {section.items.map((item) => (
-                        <HighlightItem key={item} text={item} />
+                      {section.items.map((item, itemIndex) => (
+                        <HighlightItem key={itemIndex} text={item} />
                       ))}
                     </ul>
                   </div>
@@ -35,8 +35,8 @@ export function Experience() {
               </div>
             ) : (
               <ul className="mt-3 space-y-1.5">
-                {role.highlights?.map((h) => (
-                  <HighlightItem key={h} text={h} />
+                {role.highlights?.map((h, highlightIndex) => (
+                  <HighlightItem key={highlightIndex} text={h} />
                 ))}
               </ul>
             )}

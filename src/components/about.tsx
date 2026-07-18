@@ -10,7 +10,7 @@ export function About() {
         <h2 className="text-accent text-xs font-semibold tracking-[0.2em] uppercase">{about.title}</h2>
       </div>
       {about.paragraphs.map((paragraph, index) => (
-        <p key={paragraph} className={`reveal text-text-muted text-base leading-relaxed sm:text-lg ${index === 0 ? 'mt-6' : 'mt-4'}`}>
+        <p key={index} className={`reveal text-text-muted text-base leading-relaxed sm:text-lg ${index === 0 ? 'mt-6' : 'mt-4'}`}>
           {paragraph}
         </p>
       ))}

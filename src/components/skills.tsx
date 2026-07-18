@@ -10,8 +10,8 @@ export function Skills() {
         <h2 className="text-accent text-xs font-semibold tracking-[0.2em] uppercase">{skills.title}</h2>
       </div>
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
-        {skills.groups.map((group) => (
-          <div key={group.label} className="reveal">
+        {skills.groups.map((group, groupIndex) => (
+          <div key={groupIndex} className="reveal">
             <h3 className="text-text mb-2 text-sm font-medium">{group.label}</h3>
             <div className="flex flex-wrap gap-2">
               {group.items.map((item) => (
