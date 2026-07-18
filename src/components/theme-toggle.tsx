@@ -1,4 +1,3 @@
-import { FloatingControl } from '@/components/floating-control';
 import { useTheme } from '@/hooks/use-theme';
 
 export function ThemeToggle() {
@@ -7,17 +6,15 @@ export function ThemeToggle() {
   const label = isDark ? 'Switch to light theme' : 'Switch to dark theme';
 
   return (
-    <FloatingControl top="top-16">
-      <button
-        type="button"
-        onClick={toggleTheme}
-        aria-label={label}
-        title={label}
-        className="border-border bg-surface/90 text-text hover:border-accent hover:text-accent flex h-11 w-11 items-center justify-center rounded-full border shadow-sm backdrop-blur-sm transition-colors duration-200"
-      >
-        {isDark ? <SunIcon /> : <MoonIcon />}
-      </button>
-    </FloatingControl>
+    <button
+      type="button"
+      onClick={toggleTheme}
+      aria-label={label}
+      title={label}
+      className="border-border bg-surface/90 text-text hover:border-accent hover:text-accent flex h-9 w-9 items-center justify-center rounded-full border shadow-sm backdrop-blur-sm transition-colors duration-200"
+    >
+      {isDark ? <SunIcon /> : <MoonIcon />}
+    </button>
   );
 }
 
