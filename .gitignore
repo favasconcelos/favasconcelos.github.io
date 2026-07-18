@@ -9,6 +9,10 @@ dist-ssr/
 *.local
 .vite/
 
+# Cloudflare
+.wrangler
+.dev.vars*
+
 # Environment files
 .env
 .env.local
