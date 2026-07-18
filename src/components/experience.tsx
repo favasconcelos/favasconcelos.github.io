@@ -1,4 +1,5 @@
 import { useLocale } from '@/i18n/use-locale';
+import { cn } from '@/utils/cn';
 
 export function Experience() {
   const { messages } = useLocale();
@@ -11,7 +12,7 @@ export function Experience() {
       </div>
       <div className="mt-8 space-y-12">
         {experience.roles.map((role, i) => (
-          <article key={role.company} className={i % 2 === 0 ? 'reveal-left' : 'reveal-right'}>
+          <article key={role.company} className={cn(i % 2 === 0 ? 'reveal-left' : 'reveal-right')}>
             <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
               <h3 className="text-text text-lg font-semibold">{role.company}</h3>
               <span className="text-text-muted text-sm whitespace-nowrap italic">{role.period}</span>
