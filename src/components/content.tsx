@@ -1,11 +1,23 @@
-import Profile from "@/components/profile";
-import Info from "@/components/info";
+import Hero from "@/components/hero";
+import About from "@/components/about";
+import Experience from "@/components/experience";
+import Skills from "@/components/skills";
+import Contact from "@/components/contact";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export default function Content() {
+  const containerRef = useScrollReveal();
+
   return (
-    <div className="flex flex-row flex-1 bg-white m-2 overflow-hidden max-md:m-0 max-md:bg-[#201e1b] max-md:text-white">
-      <Info />
-      <Profile />
-    </div>
+    <main ref={containerRef} className="w-full">
+      <Hero />
+      <div className="w-full border-t border-accent/20" />
+      <About />
+      <div className="max-w-3xl mx-auto border-t border-accent/20" />
+      <Experience />
+      <div className="max-w-3xl mx-auto border-t border-accent/20" />
+      <Skills />
+      <Contact />
+    </main>
   );
 }
