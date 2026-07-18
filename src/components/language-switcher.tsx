@@ -16,7 +16,7 @@ export function LanguageSwitcher() {
               onClick={() => setLocale(code)}
               aria-pressed={active}
               className={`rounded-full px-3 py-1 text-xs font-medium transition-colors duration-200 ${
-                active ? 'bg-accent/15 text-accent ring-accent/50 ring-1' : 'text-text-muted hover:text-text hover:bg-white/5'
+                active ? 'bg-accent/15 text-accent ring-accent/50 ring-1' : 'text-text-muted hover:text-text hover:bg-text/5'
               }`}
             >
               {code.toUpperCase()}
