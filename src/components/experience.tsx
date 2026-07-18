@@ -94,7 +94,7 @@ export default function Experience() {
 
 function HighlightItem({ text }: { text: string }) {
   return (
-    <li className="text-text-muted before:bg-accent/40 relative pl-4 text-sm leading-relaxed before:absolute before:top-[9px] before:left-0 before:h-1.5 before:w-1.5 before:rounded-full before:content-['']">
+    <li className="text-text-muted before:bg-accent/40 relative pl-4 text-sm leading-relaxed before:absolute before:top-2.25 before:left-0 before:h-1.5 before:w-1.5 before:rounded-full before:content-['']">
       {text}
     </li>
   );
