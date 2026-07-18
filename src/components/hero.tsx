@@ -13,10 +13,10 @@ export function Hero() {
       {/* Frevo background — faded, atmospheric, randomly selected */}
       <picture className="absolute inset-0" aria-hidden="true">
         <source srcSet={image.webp} type="image/webp" />
-        <img src={image.jpg} alt="" width="1920" height="1080" className="h-full w-full object-cover opacity-[0.12]" loading="eager" decoding="async" />
+        <img src={image.jpg} alt="" width="1920" height="1080" className="h-full w-full object-cover opacity-[0.08] dark:opacity-[0.12]" loading="eager" decoding="async" />
       </picture>
-      {/* Dark gradient overlay for text readability */}
-      <div className="from-bg/60 via-bg/40 to-bg absolute inset-0 bg-gradient-to-b" aria-hidden="true" />
+      {/* Gradient overlay for text readability */}
+      <div className="from-bg/80 via-bg/60 to-bg dark:from-bg/60 dark:via-bg/40 absolute inset-0 bg-gradient-to-b" aria-hidden="true" />
 
       <div className="relative z-10">
         <p className="reveal text-text-muted mb-4 text-sm tracking-widest uppercase">Senior Software Engineer</p>

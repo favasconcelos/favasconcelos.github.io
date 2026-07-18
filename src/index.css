@@ -1,14 +1,40 @@
 @import 'tailwindcss';
 
-@theme {
-  --color-bg: #0f1117;
-  --color-surface: #1a1d26;
-  --color-accent: #c9a84c;
-  --color-accent-dim: #a68a3a;
-  --color-vermillion: #c23b22;
-  --color-text: #e2e8f0;
-  --color-text-muted: #94a3b8;
-  --color-border: #2d3348;
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  --bg: #f8f7f2;
+  --surface: #ffffff;
+  --accent: #b08d28;
+  --accent-dim: #8f7320;
+  --vermillion: #c23b22;
+  --text: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --border: #e0dcd0;
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --bg: #0f1117;
+  --surface: #1a1d26;
+  --accent: #c9a84c;
+  --accent-dim: #a68a3a;
+  --vermillion: #c23b22;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --border: #2d3348;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-vermillion: var(--vermillion);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
 }
 
 * {
@@ -24,7 +50,6 @@ body,
 #root {
   width: 100%;
   min-height: 100%;
-  color-scheme: dark;
 }
 
 body {
@@ -55,7 +80,7 @@ h6 {
 
 ::selection {
   background-color: var(--color-accent);
-  color: #0f1117;
+  color: var(--bg);
 }
 
 /* ── Focus states ───────────────────────────────────────── */

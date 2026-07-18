@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -23,6 +23,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="preload" as="image" href="/frevo.webp" />
     <meta name="theme-color" content="#0f1117" />
+    <script>
+      (function () {
+        const stored = localStorage.getItem('theme');
+        const isDark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (metaThemeColor) {
+          metaThemeColor.setAttribute('content', isDark ? '#0f1117' : '#f8f7f2');
+        }
+      })();
+    </script>
     <title>Felipe Vasconcelos (f@avasconcelos.com)</title>
   </head>
   <body>
