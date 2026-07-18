@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-bg: #0f1117;
@@ -30,7 +30,7 @@ body,
 body {
   margin: 0;
   font-family:
-    "Space Grotesk",
+    'Space Grotesk',
     system-ui,
     -apple-system,
     sans-serif;

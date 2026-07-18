@@ -1,18 +1,19 @@
-import type { JSX } from "react";
-import Email from "./email";
-import Github from "./github";
-import Skype from "./skype";
-import Twitter from "./twitter";
-import Resume from "./resume";
-import LinkedIn from "./linked-in";
+import type { JSX } from 'react';
+
+import Email from './email';
+import Github from './github';
+import LinkedIn from './linked-in';
+import Resume from './resume';
+import Skype from './skype';
+import Twitter from './twitter';
 
 export enum IconType {
-  RESUME = "Resume",
-  GITHUB = "Github",
-  LINKEDIN = "LinkedIn",
-  SKYPE = "Skype",
-  TWITTER = "Twitter",
-  EMAIL = "E-mail",
+  RESUME = 'Resume',
+  GITHUB = 'Github',
+  LINKEDIN = 'LinkedIn',
+  SKYPE = 'Skype',
+  TWITTER = 'Twitter',
+  EMAIL = 'E-mail',
 }
 
 type IconProps = {

@@ -1,13 +1,16 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "rules": {
-    "no-unused-vars": "error",
-    "no-duplicate-imports": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+  "categories": {
+    "correctness": "warn"
   },
   "env": {
     "browser": true,
-    "es2022": true
+    "es2026 ": true
+  },
+  "rules": {
+    "no-duplicate-imports": "error",
+    "no-unused-vars": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error"
   }
 }

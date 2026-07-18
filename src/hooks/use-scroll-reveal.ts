@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 /**
  * Attaches IntersectionObserver to elements matching `selector`
@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
  *
  * Used for scroll-triggered reveal animations.
  */
-export function useScrollReveal(selector = ".reveal, .reveal-left, .reveal-right") {
+export function useScrollReveal(selector = '.reveal, .reveal-left, .reveal-right') {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,12 +20,12 @@ export function useScrollReveal(selector = ".reveal, .reveal-left, .reveal-right
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            entry.target.classList.add('visible');
             observer.unobserve(entry.target);
           }
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' },
     );
 
     for (const el of elements) {

@@ -1,9 +1,9 @@
-import Hero from "@/components/hero";
-import About from "@/components/about";
-import Experience from "@/components/experience";
-import Skills from "@/components/skills";
-import Contact from "@/components/contact";
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import About from '@/components/about';
+import Contact from '@/components/contact';
+import Experience from '@/components/experience';
+import Hero from '@/components/hero';
+import Skills from '@/components/skills';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 export default function Content() {
   const containerRef = useScrollReveal();
@@ -11,11 +11,11 @@ export default function Content() {
   return (
     <main ref={containerRef} className="w-full overflow-x-hidden" id="main">
       <Hero />
-      <div className="w-full border-t border-accent/20" />
+      <div className="border-accent/20 w-full border-t" />
       <About />
-      <div className="max-w-3xl mx-auto border-t border-accent/20" />
+      <div className="border-accent/20 mx-auto max-w-3xl border-t" />
       <Experience />
-      <div className="max-w-3xl mx-auto border-t border-accent/20" />
+      <div className="border-accent/20 mx-auto max-w-3xl border-t" />
       <Skills />
       <Contact />
     </main>

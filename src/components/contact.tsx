@@ -1,34 +1,29 @@
-import Icon, { IconType } from "@/components/icon/icon";
+import Icon, { IconType } from '@/components/icon/icon';
 
 const LINKS = [
   {
-    href: "https://www.linkedin.com/in/felipevasconcelos",
+    href: 'https://www.linkedin.com/in/felipevasconcelos',
     type: IconType.LINKEDIN,
-    label: "LinkedIn",
+    label: 'LinkedIn',
   },
-  { href: "https://github.com/favasconcelos", type: IconType.GITHUB, label: "GitHub" },
-  { href: "mailto:f@avasconcelos.com", type: IconType.EMAIL, label: "Email" },
+  { href: 'https://github.com/favasconcelos', type: IconType.GITHUB, label: 'GitHub' },
+  { href: 'mailto:f@avasconcelos.com', type: IconType.EMAIL, label: 'Email' },
   {
-    href: "https://drive.google.com/file/d/1u4MOtXESS_GmHKQyBbY5wTmtfn_D4Moh/view?usp=sharing",
+    href: 'https://drive.google.com/file/d/1u4MOtXESS_GmHKQyBbY5wTmtfn_D4Moh/view?usp=sharing',
     type: IconType.RESUME,
-    label: "Resume",
+    label: 'Resume',
   },
 ] as const;
 
 export default function Contact() {
   return (
-    <footer className="border-t border-border">
-      <div className="max-w-3xl mx-auto px-6 py-16">
+    <footer className="border-border border-t">
+      <div className="mx-auto max-w-3xl px-6 py-16">
         <div className="reveal">
-          <h2 className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">
-            Get in Touch
-          </h2>
+          <h2 className="text-accent text-xs font-semibold tracking-[0.2em] uppercase">Get in Touch</h2>
         </div>
-        <p className="reveal mt-4 text-text-muted text-sm">
-          <a
-            href="mailto:f@avasconcelos.com"
-            className="text-text hover:text-accent transition-colors duration-200 underline underline-offset-4 decoration-border hover:decoration-accent"
-          >
+        <p className="reveal text-text-muted mt-4 text-sm">
+          <a href="mailto:f@avasconcelos.com" className="text-text hover:text-accent decoration-border hover:decoration-accent underline underline-offset-4 transition-colors duration-200">
             f@avasconcelos.com
           </a>
         </p>
@@ -40,7 +35,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.label}
-              className="flex items-center gap-2 text-sm text-text-muted hover:text-accent transition-colors duration-200 [&>svg]:w-5 [&>svg]:h-5 [&>svg]:fill-current"
+              className="text-text-muted hover:text-accent flex items-center gap-2 text-sm transition-colors duration-200 [&>svg]:h-5 [&>svg]:w-5 [&>svg]:fill-current"
             >
               <Icon type={link.type} />
               <span>{link.label}</span>
@@ -48,9 +43,7 @@ export default function Contact() {
           ))}
         </div>
       </div>
-      <div className="border-t border-border py-6 text-center text-xs text-text-muted">
-        © {new Date().getFullYear()} Felipe Vasconcelos
-      </div>
+      <div className="border-border text-text-muted border-t py-6 text-center text-xs">© {new Date().getFullYear()} Felipe Vasconcelos</div>
     </footer>
   );
 }

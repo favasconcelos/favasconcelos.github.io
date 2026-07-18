@@ -8,12 +8,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build && rm -f dist/wrangler.json .wrangler/deploy/config.json",
     "preview": "vite preview",
-    "deploy": "wrangler pages deploy ./dist --branch main",
-    "deploy:preview": "wrangler pages deploy ./dist",
     "lint": "oxlint src",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
-    "test": "echo \"No tests yet\" && exit 0"
+    "check": "npm run fmt:check && npm run lint"
   },
   "dependencies": {
     "react": "19.2.7",
