@@ -20,7 +20,7 @@ export const br: Translation = {
   about: {
     title: 'Sobre',
     paragraphs: [
-      'Engenheiro de Software Sênior com mais de 15 anos construindo produtos full-stack em mobile, web e cloud. Lidero uma equipe de 3 engenheiros, co-lidero o Frontend Chapter e sou responsável pela arquitetura de uma plataforma de micro-frontends usada por vários times de produto. Crio integrações personalizadas com IA usando ferramentas MCP que conectam sistemas de engenharia e aceleram a entrega.',
+      'Engenheiro de Software Sênior com mais de 15 anos construindo produtos full-stack em mobile, web e cloud. Lidero uma equipe de 3 engenheiros, colidero o Frontend Chapter e sou responsável pela arquitetura de uma plataforma de micro-frontends usada por vários times de produto. Crio integrações personalizadas com IA usando ferramentas MCP que conectam sistemas de engenharia e aceleram a entrega.',
       'Nascido em Recife, Brasil, levo a mesma energia para a engenharia: consistente, persistente e sempre alinhado com o time.',
     ],
   },
@@ -37,7 +37,7 @@ export const br: Translation = {
             heading: 'Liderança',
             items: [
               'Gerencio 3 reportes diretos com reuniões 1:1, avaliações de desempenho e planejamento de carreira',
-              'Co-lidero o Frontend Chapter como um dos 3 líderes técnicos, definindo padrões de arquitetura para a plataforma de micro-frontends',
+              'Colidero o Frontend Chapter como um dos 3 líderes técnicos, definindo padrões de arquitetura para a plataforma de micro-frontends',
             ],
           },
           {
@@ -111,5 +111,9 @@ export const br: Translation = {
       br: 'Português (Brasil)',
       es: 'Espanhol',
     },
+  },
+  themeToggle: {
+    light: 'Mudar para tema claro',
+    dark: 'Mudar para tema escuro',
   },
 };

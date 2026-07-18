@@ -61,6 +61,10 @@ export type Translation = {
     label: string;
     languages: Record<Locale, string>;
   };
+  themeToggle: {
+    light: string;
+    dark: string;
+  };
 };
 
 export function isLocale(value: unknown): value is Locale {

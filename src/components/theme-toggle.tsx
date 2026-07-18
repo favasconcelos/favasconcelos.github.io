@@ -1,9 +1,11 @@
 import { useTheme } from '@/hooks/use-theme';
+import { useLocale } from '@/i18n/use-locale';
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
+  const { messages } = useLocale();
   const isDark = theme === 'dark';
-  const label = isDark ? 'Switch to light theme' : 'Switch to dark theme';
+  const label = isDark ? messages.themeToggle.light : messages.themeToggle.dark;
 
   return (
     <button

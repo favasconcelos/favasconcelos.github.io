@@ -52,7 +52,7 @@ export const en: Translation = {
             items: [
               'Led legacy system rewrite delivered in 2 months against a 1-year estimate, integrating AI tooling across all engineering disciplines',
               'Designed AWS real-time notification system (CDK, Lambda, DynamoDB, API Gateway) serving ~3,000 concurrent users',
-              'Migrated micro-frontend shell from Webpack to Vite; rewrote Jenkins shared-library pipelines in Groovy for cross-team reuse',
+              'Migrated micro-frontend shell from Webpack to Vite; rewrote Jenkins shared library pipelines in Groovy for cross-team reuse',
               'Led Jest → Vitest migration — achieved 40%+ faster CI execution, benchmarked with Hyperfine across multiple environments',
             ],
           },
@@ -107,5 +107,9 @@ export const en: Translation = {
       br: 'Portuguese (Brazil)',
       es: 'Spanish',
     },
+  },
+  themeToggle: {
+    light: 'Switch to light theme',
+    dark: 'Switch to dark theme',
   },
 };

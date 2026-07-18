@@ -36,7 +36,7 @@ export const es: Translation = {
           {
             heading: 'Liderazgo',
             items: [
-              'Gestiono 3 reportes directos con reuniones 1:1, evaluaciones de desempeño y planificación de carrera',
+              'Gestiono 3 personas a mi cargo con reuniones 1:1, evaluaciones de rendimiento y planificación de carrera',
               'Co-lidero el Frontend Chapter como uno de los 3 líderes técnicos, estableciendo estándares de arquitectura para la plataforma de micro-frontends',
             ],
           },
@@ -111,5 +111,9 @@ export const es: Translation = {
       br: 'Portugués (Brasil)',
       es: 'Español',
     },
+  },
+  themeToggle: {
+    light: 'Cambiar a tema claro',
+    dark: 'Cambiar a tema oscuro',
   },
 };
