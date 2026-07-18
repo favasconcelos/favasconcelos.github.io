@@ -1,23 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "assets": {
-    "not_found_handling": "single-page-application",
-  },
-  "compatibility_date": "2026-07-18",
   "name": "portifolio",
-  "observability": {
-    "enabled": false,
-    "head_sampling_rate": 1,
-    "logs": {
-      "enabled": true,
-      "head_sampling_rate": 1,
-      "invocation_logs": true,
-      "persist": true,
-    },
-    "traces": {
-      "enabled": false,
-      "head_sampling_rate": 1,
-      "persist": true,
-    },
-  },
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-07-18",
 }
