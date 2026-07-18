@@ -28,7 +28,7 @@ body,
 
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-text);

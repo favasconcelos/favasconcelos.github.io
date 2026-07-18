@@ -2,7 +2,7 @@ const ROLES = [
   {
     company: "adidas",
     title: "Senior Software Engineer · Frontend Chapter Lead",
-    period: "Jun 2019 — Present",
+    period: "Jun 2019 to Present",
     location: "Zaragoza, Spain",
     sections: [
       {
@@ -13,9 +13,9 @@ const ROLES = [
         ],
       },
       {
-        heading: "Agentic AI & Tooling",
+        heading: "AI Integration & Tooling",
         items: [
-          "Built a custom MCP toolchain integrating Instana, Bitbucket, Jira, Confluence, and GitHub to enable agentic engineering workflows",
+          "Built a custom MCP toolchain integrating Instana, Bitbucket, Jira, Confluence, and GitHub to enable AI-assisted engineering workflows",
           "Ran a one-month AI-accelerated delivery experiment combining GitHub Copilot, Figma AI, and custom MCP tooling",
           "Building an MCP server that indexes multiple repositories into a single queryable knowledge base for AI agents across the department",
         ],
@@ -23,7 +23,7 @@ const ROLES = [
       {
         heading: "Platform Engineering",
         items: [
-          "Led legacy system rewrite — delivered in 2 months against a 1-year estimate, treating agentic AI as core to every discipline",
+          "Led legacy system rewrite delivered in 2 months against a 1-year estimate, integrating AI tooling across all engineering disciplines",
           "Designed AWS real-time notification system (CDK, Lambda, DynamoDB, API Gateway) serving ~3,000 concurrent users",
           "Migrated micro-frontend shell from Webpack to Vite; rewrote Jenkins shared-library pipelines in Groovy for cross-team reuse",
           "Led Jest → Vitest migration — achieved 40%+ faster CI execution, benchmarked with Hyperfine across multiple environments",
@@ -34,7 +34,7 @@ const ROLES = [
   {
     company: "Stellar Fusion",
     title: "Full-Stack Engineer (Contract)",
-    period: "Jun 2021 — Jul 2022",
+    period: "Jun 2021 to Jul 2022",
     location: "Remote",
     highlights: [
       "Led full-stack development as team lead (React + Node.js)",
@@ -44,7 +44,7 @@ const ROLES = [
   {
     company: "CESAR · Samsung · Motorola",
     title: "Software Engineer → Technical Lead",
-    period: "Dec 2010 — May 2019",
+    period: "Dec 2010 to May 2019",
     location: "Recife, Brazil",
     highlights: [
       "Built 20+ Android apps published on the Samsung App Store over five years",

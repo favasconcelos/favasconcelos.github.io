@@ -40,7 +40,7 @@ export default function Hero() {
         <div className="reveal mt-6 w-24 h-[2px] bg-gradient-to-r from-accent via-vermillion to-transparent" />
         <p className="reveal mt-6 text-text-muted text-base sm:text-lg max-w-xl leading-relaxed">
           Frontend Chapter Lead at adidas. Building micro-frontend platforms,
-          agentic AI tooling, and cloud-native systems.
+          AI-powered developer tools, and cloud-native systems.
         </p>
         <p className="reveal mt-3 text-sm italic text-accent/70">
           From the drums of Recife to the DOM — same rhythm, different stage.

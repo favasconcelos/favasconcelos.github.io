@@ -1,23 +1,27 @@
 const SKILL_GROUPS = [
   {
-    label: "Languages",
-    items: ["JavaScript", "TypeScript", "Python", "Java"],
+    label: "Languages & Runtimes",
+    items: ["JavaScript", "TypeScript", "Python", "Java", "Node.js", "Bun"],
   },
   {
     label: "Frameworks",
-    items: ["React", "Node.js", "NestJS", "Bun", "Tailwind CSS"],
+    items: ["React", "NestJS", "Tailwind CSS"],
+  },
+  {
+    label: "Build Tools",
+    items: ["Vite", "Webpack", "Turbopack", "RSPack"],
   },
   {
     label: "Cloud & Infra",
-    items: ["AWS", "Kubernetes", "Docker", "Terraform"],
+    items: ["AWS", "Kubernetes", "Docker"],
   },
   {
-    label: "CI/CD & Tools",
-    items: ["GitHub Actions", "Jenkins", "Vite", "Webpack"],
+    label: "CI/CD",
+    items: ["GitHub Actions", "Jenkins"],
   },
   {
-    label: "AI & Agentic",
-    items: ["MCP", "GitHub Copilot", "tree-sitter", "Opencode"],
+    label: "AI & Automation",
+    items: ["MCP", "GitHub Copilot", "Opencode"],
   },
 ] as const;
 

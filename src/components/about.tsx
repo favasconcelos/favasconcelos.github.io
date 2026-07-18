@@ -10,14 +10,12 @@ export default function About() {
         Senior Software Engineer with 15+ years building full-stack products across
         mobile, web, and cloud. I lead a team of 3 engineers, co-lead the Frontend
         Chapter, and own the architecture of a micro-frontend platform used across
-        multiple product teams. I'm an early practitioner of agentic AI workflows,
-        building custom MCP tooling that connects engineering systems and accelerates
-        delivery.
+        multiple product teams. I build custom AI integrations using MCP tooling
+        that connects engineering systems and accelerates delivery.
       </p>
       <p className="reveal mt-4 text-text-muted text-base sm:text-lg leading-relaxed">
-        Born in Recife — where maracatu drums shake the streets and culture runs
-        deep — I carry that same energy into engineering: rhythmic, relentless,
-        and always in sync with the team.
+        Born in Recife, Brazil, I bring that same energy to engineering: consistent,
+        persistent, and always aligned with the team.
       </p>
     </section>
   );
