@@ -1,6 +1,12 @@
 export default function Email() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 31.012 31.012">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      viewBox="0 0 31.012 31.012"
+      aria-hidden="true"
+    >
       <g>
         <g>
           <path

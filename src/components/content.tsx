@@ -9,7 +9,7 @@ export default function Content() {
   const containerRef = useScrollReveal();
 
   return (
-    <main ref={containerRef} className="w-full">
+    <main ref={containerRef} className="w-full overflow-x-hidden" id="main">
       <Hero />
       <div className="w-full border-t border-accent/20" />
       <About />

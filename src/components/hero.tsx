@@ -6,10 +6,7 @@ const HERO_IMAGES = [
 ] as const;
 
 export default function Hero() {
-  const image = useMemo(
-    () => HERO_IMAGES[Math.floor(Math.random() * HERO_IMAGES.length)],
-    []
-  );
+  const image = useMemo(() => HERO_IMAGES[Math.floor(Math.random() * HERO_IMAGES.length)], []);
 
   return (
     <section className="relative min-h-[80vh] flex flex-col justify-center items-center text-center px-6 py-20 overflow-hidden">
@@ -19,6 +16,8 @@ export default function Hero() {
         <img
           src={image.jpg}
           alt=""
+          width="1920"
+          height="1080"
           className="w-full h-full object-cover opacity-[0.12]"
           loading="eager"
           decoding="async"
@@ -39,8 +38,8 @@ export default function Hero() {
         </h1>
         <div className="reveal mt-6 w-24 h-[2px] bg-gradient-to-r from-accent via-vermillion to-transparent" />
         <p className="reveal mt-6 text-text-muted text-base sm:text-lg max-w-xl leading-relaxed">
-          Frontend Chapter Lead at adidas. Building micro-frontend platforms,
-          AI-powered developer tools, and cloud-native systems.
+          Frontend Chapter Lead at adidas. Building micro-frontend platforms, AI-powered developer
+          tools, and cloud-native systems.
         </p>
         <p className="reveal mt-3 text-sm italic text-accent/70">
           From the drums of Recife to the DOM — same rhythm, different stage.

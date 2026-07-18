@@ -27,11 +27,12 @@ const SKILL_GROUPS = [
 
 export default function Skills() {
   return (
-    <section className="max-w-3xl mx-auto px-6 py-16">
+    <section
+      className="max-w-3xl mx-auto px-6 py-16"
+      style={{ contentVisibility: "auto", containIntrinsicSize: "0 400px" }}
+    >
       <div className="reveal">
-        <h2 className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">
-          Skills
-        </h2>
+        <h2 className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">Skills</h2>
       </div>
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
         {SKILL_GROUPS.map((group) => (

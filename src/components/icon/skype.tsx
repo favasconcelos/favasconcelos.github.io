@@ -1,6 +1,6 @@
 export default function Skype() {
   return (
-    <svg x="0px" y="0px" viewBox="0 0 329.978 329.978">
+    <svg x="0px" y="0px" viewBox="0 0 329.978 329.978" aria-hidden="true">
       <g>
         <path
           d="M309.644,192.877c1.732-9.032,2.648-18.352,2.648-27.888c0-81.353-65.954-147.302-147.304-147.302

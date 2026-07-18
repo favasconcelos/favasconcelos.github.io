@@ -24,22 +24,51 @@ body,
 #root {
   width: 100%;
   min-height: 100%;
+  color-scheme: dark;
 }
 
 body {
   margin: 0;
-  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  font-family:
+    "Space Grotesk",
+    system-ui,
+    -apple-system,
+    sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-variant-numeric: tabular-nums;
+  touch-action: manipulation;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
 }
 
 ::selection {
   background-color: var(--color-accent);
   color: #0f1117;
+}
+
+/* ── Focus states ───────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 /* ── Scroll reveal animations ────────────────────────────── */
@@ -65,14 +94,30 @@ body {
     transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.reveal.visible .reveal-child:nth-child(1) { transition-delay: 0.05s; }
-.reveal.visible .reveal-child:nth-child(2) { transition-delay: 0.12s; }
-.reveal.visible .reveal-child:nth-child(3) { transition-delay: 0.19s; }
-.reveal.visible .reveal-child:nth-child(4) { transition-delay: 0.26s; }
-.reveal.visible .reveal-child:nth-child(5) { transition-delay: 0.33s; }
-.reveal.visible .reveal-child:nth-child(6) { transition-delay: 0.40s; }
-.reveal.visible .reveal-child:nth-child(7) { transition-delay: 0.47s; }
-.reveal.visible .reveal-child:nth-child(8) { transition-delay: 0.54s; }
+.reveal.visible .reveal-child:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.reveal.visible .reveal-child:nth-child(2) {
+  transition-delay: 0.12s;
+}
+.reveal.visible .reveal-child:nth-child(3) {
+  transition-delay: 0.19s;
+}
+.reveal.visible .reveal-child:nth-child(4) {
+  transition-delay: 0.26s;
+}
+.reveal.visible .reveal-child:nth-child(5) {
+  transition-delay: 0.33s;
+}
+.reveal.visible .reveal-child:nth-child(6) {
+  transition-delay: 0.4s;
+}
+.reveal.visible .reveal-child:nth-child(7) {
+  transition-delay: 0.47s;
+}
+.reveal.visible .reveal-child:nth-child(8) {
+  transition-delay: 0.54s;
+}
 
 .reveal.visible .reveal-child {
   opacity: 1;
@@ -104,6 +149,10 @@ body {
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .reveal,
   .reveal-left,
   .reveal-right,

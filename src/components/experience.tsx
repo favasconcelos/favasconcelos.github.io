@@ -57,18 +57,16 @@ const ROLES = [
 
 export default function Experience() {
   return (
-    <section className="max-w-3xl mx-auto px-6 py-16">
+    <section
+      className="max-w-3xl mx-auto px-6 py-16"
+      style={{ contentVisibility: "auto", containIntrinsicSize: "0 800px" }}
+    >
       <div className="reveal">
-        <h2 className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">
-          Experience
-        </h2>
+        <h2 className="text-xs font-semibold tracking-[0.2em] uppercase text-accent">Experience</h2>
       </div>
       <div className="mt-8 space-y-12">
         {ROLES.map((role, i) => (
-          <article
-            key={role.company}
-            className={i % 2 === 0 ? "reveal-left" : "reveal-right"}
-          >
+          <article key={role.company} className={i % 2 === 0 ? "reveal-left" : "reveal-right"}>
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
               <h3 className="text-lg font-semibold text-text">{role.company}</h3>
               <span className="text-sm text-text-muted italic whitespace-nowrap">

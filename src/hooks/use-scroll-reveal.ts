@@ -25,7 +25,7 @@ export function useScrollReveal(selector = ".reveal, .reveal-left, .reveal-right
           }
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
     );
 
     for (const el of elements) {

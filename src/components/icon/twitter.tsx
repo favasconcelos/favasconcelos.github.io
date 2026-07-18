@@ -1,6 +1,6 @@
 export default function Twitter() {
   return (
-    <svg x="0px" y="0px" viewBox="0 0 512 512">
+    <svg x="0px" y="0px" viewBox="0 0 512 512" aria-hidden="true">
       <g>
         <g>
           <path
