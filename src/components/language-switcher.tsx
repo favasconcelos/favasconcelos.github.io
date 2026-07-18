@@ -6,7 +6,7 @@ export function LanguageSwitcher() {
 
   return (
     <div className="fixed top-4 right-4 z-50" role="region" aria-label={messages.languageSwitcher.label}>
-      <div className="bg-surface border-border flex rounded-full border p-1 shadow-sm">
+      <div className="bg-surface/90 border-border flex rounded-full border p-1 shadow-sm backdrop-blur-sm">
         {SUPPORTED_LOCALES.map((code) => {
           const active = code === locale;
           return (
@@ -15,7 +15,9 @@ export function LanguageSwitcher() {
               type="button"
               onClick={() => setLocale(code)}
               aria-pressed={active}
-              className={`text-text-muted hover:text-text rounded-full px-3 py-1 text-xs font-medium transition-colors duration-200 ${active ? 'bg-accent text-bg hover:text-bg' : ''}`}
+              className={`rounded-full px-3 py-1 text-xs font-medium transition-colors duration-200 ${
+                active ? 'bg-accent/15 text-accent ring-accent/50 ring-1' : 'text-text-muted hover:text-text hover:bg-white/5'
+              }`}
             >
               {code.toUpperCase()}
             </button>

@@ -108,7 +108,7 @@ export const es: Translation = {
     label: 'Seleccionar idioma',
     languages: {
       en: 'Inglés',
-      pt: 'Portugués',
+      br: 'Portugués (Brasil)',
       es: 'Español',
     },
   },

@@ -1,4 +1,4 @@
-export const SUPPORTED_LOCALES = ['en', 'pt', 'es'] as const;
+export const SUPPORTED_LOCALES = ['en', 'br', 'es'] as const;
 
 export type Locale = (typeof SUPPORTED_LOCALES)[number];
 
@@ -69,7 +69,8 @@ export function isLocale(value: unknown): value is Locale {
 
 export function normalizeLocale(value: string): Locale {
   const normalized = value.split('-')[0].toLowerCase();
-  return isLocale(normalized) ? normalized : 'en';
+  const locale = normalized === 'pt' ? 'br' : normalized;
+  return isLocale(locale) ? locale : 'en';
 }
 
 export function detectLocale(): Locale {

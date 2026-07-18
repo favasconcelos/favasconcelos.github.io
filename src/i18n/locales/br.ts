@@ -1,6 +1,6 @@
 import type { Translation } from '@/i18n/types';
 
-export const pt: Translation = {
+export const br: Translation = {
   meta: {
     description:
       'Felipe Vasconcelos — Engenheiro de Software Sênior e Líder do Frontend Chapter na adidas. Construindo plataformas de micro-frontends, ferramentas de desenvolvimento com IA e sistemas cloud-native.',
@@ -108,7 +108,7 @@ export const pt: Translation = {
     label: 'Selecionar idioma',
     languages: {
       en: 'Inglês',
-      pt: 'Português',
+      br: 'Português (Brasil)',
       es: 'Espanhol',
     },
   },
