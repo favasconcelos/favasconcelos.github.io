@@ -1,12 +1,12 @@
 {
-  "name": "favasconcelos.github.io",
+  "name": "avasconcelos.com",
   "version": "2.0.0",
   "private": true,
   "homepage": "https://avasconcelos.com",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && rm -f dist/wrangler.json .wrangler/deploy/config.json",
+    "build": "tsc -b && vite build ",
     "preview": "vite preview",
     "lint": "oxlint src",
     "fmt": "oxfmt",
