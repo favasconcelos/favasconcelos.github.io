@@ -40,3 +40,6 @@ Thumbs.db
 *.sw?
 tsconfig.tsbuildinfo
 dist/
+
+# Session files
+.tmp/
