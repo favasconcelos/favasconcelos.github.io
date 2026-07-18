@@ -1,10 +1,10 @@
 import { Content } from '@/components/content';
-import { ThemeToggle } from '@/components/theme-toggle';
+import { HeaderControls } from '@/components/header-controls';
 
 export function App() {
   return (
     <>
-      <ThemeToggle />
+      <HeaderControls />
       <Content />
     </>
   );

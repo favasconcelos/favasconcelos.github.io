@@ -1,6 +1,6 @@
 export function Resume() {
   return (
-    <svg x="0px" y="0px" viewBox="0 0 60 60" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="currentColor" aria-hidden="true" focusable="false">
       <g>
         <path d="M38.914,0H6.5v60h47V14.586L38.914,0z M39.5,3.414L50.086,14H39.5V3.414z M8.5,58V2h29v14h14v42H8.5z" />
         <path d="M34.5,37c0.552,0,1-0.447,1-1s-0.448-1-1-1h-17c-0.552,0-1,0.447-1,1s0.448,1,1,1H34.5z" />

@@ -1,6 +1,6 @@
 export function Email() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 31.012 31.012" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.012 31.012" fill="currentColor" aria-hidden="true" focusable="false">
       <g>
         <g>
           <path

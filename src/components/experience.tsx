@@ -1,3 +1,4 @@
+import { Section } from '@/components/section';
 import { useLocale } from '@/i18n/use-locale';
 import { cn } from '@/utils/cn';
 
@@ -6,10 +7,7 @@ export function Experience() {
   const { experience } = messages;
 
   return (
-    <section className="mx-auto max-w-3xl px-6 py-16" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}>
-      <div className="reveal">
-        <h2 className="text-accent text-xs font-semibold tracking-[0.2em] uppercase">{experience.title}</h2>
-      </div>
+    <Section title={experience.title} containIntrinsicSize="0 800px">
       <div className="mt-8 space-y-12">
         {experience.roles.map((role, i) => (
           <article key={role.company} className={cn(i % 2 === 0 ? 'reveal-left' : 'reveal-right')}>
@@ -44,7 +42,7 @@ export function Experience() {
           </article>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }
 

@@ -1,6 +1,6 @@
 export function LinkedIn() {
   return (
-    <svg x="0px" y="0px" viewBox="0 0 512 512" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" focusable="false">
       <g>
         <g>
           <rect y="160" width="114.496" height="352" />
