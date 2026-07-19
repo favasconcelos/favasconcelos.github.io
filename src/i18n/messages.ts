@@ -1,14 +1,19 @@
-import { br } from '@/i18n/locales/br';
-import { en } from '@/i18n/locales/en';
-import { es } from '@/i18n/locales/es';
 import type { Locale, Translation } from '@/i18n/types';
 
-export const MESSAGES: Record<Locale, Translation> = {
-  en,
-  br,
-  es,
+const loaders: Record<Locale, () => Promise<Translation>> = {
+  en: () => import('@/i18n/locales/en').then((m) => m.en),
+  br: () => import('@/i18n/locales/br').then((m) => m.br),
+  es: () => import('@/i18n/locales/es').then((m) => m.es),
 };
 
-export function messages(locale: Locale): Translation {
-  return MESSAGES[locale];
+const cache = new Map<Locale, Translation>();
+
+export async function preloadLocale(locale: Locale): Promise<Translation> {
+  const cached = cache.get(locale);
+  if (cached) return cached;
+
+  const loader = loaders[locale];
+  const msgs = await loader();
+  cache.set(locale, msgs);
+  return msgs;
 }

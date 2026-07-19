@@ -1,38 +1,57 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- ── Document essentials ─────────────────────────────────── -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Felipe Vasconcelos (f@avasconcelos.com)</title>
     <meta
       name="description"
       content="Felipe Vasconcelos — Senior Software Engineer & Frontend Chapter Lead at adidas. Building micro-frontend platforms, AI-powered developer tools, and cloud-native systems."
     />
+    <meta name="theme-color" content="#0f1117" />
+
+    <!-- ── Icons ───────────────────────────────────────────────── -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- ── Preload critical assets ─────────────────────────────── -->
+    <link rel="preload" as="image" href="/frevo.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/maracatu.webp" fetchpriority="high" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-latin.woff2" />
+
+    <!-- ── Open Graph ──────────────────────────────────────────── -->
     <meta property="og:title" content="Felipe Vasconcelos — Senior Software Engineer" />
     <meta property="og:description" content="Frontend Chapter Lead at adidas. Building micro-frontend platforms, AI-powered developer tools, and cloud-native systems." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://avasconcelos.com" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://avasconcelos.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Felipe Vasconcelos" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ── Twitter / X ─────────────────────────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Felipe Vasconcelos — Senior Software Engineer" />
     <meta name="twitter:description" content="Frontend Chapter Lead at adidas. Building micro-frontend platforms, AI-powered developer tools, and cloud-native systems." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <meta name="theme-color" content="#0f1117" />
+    <meta name="twitter:image" content="https://avasconcelos.com/og-image.png" />
+
+    <!-- ── Theme initialization (prevents FOUC) ────────────────── -->
     <script>
       (function () {
         const stored = localStorage.getItem('theme');
         const isDark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+
         document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+
         const metaThemeColor = document.querySelector('meta[name="theme-color"]');
         if (metaThemeColor) {
           metaThemeColor.setAttribute('content', isDark ? '#0f1117' : '#f8f7f2');
         }
       })();
     </script>
-    <title>Felipe Vasconcelos (f@avasconcelos.com)</title>
   </head>
   <body>
     <div id="root"></div>
