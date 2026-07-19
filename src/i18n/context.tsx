@@ -1,6 +1,6 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
-import { messages } from '@/i18n/messages';
+import { preloadLocale } from '@/i18n/messages';
 import { detectLocale, isLocale, type Locale, type Translation } from '@/i18n/types';
 
 const STORAGE_KEY = 'preferred-language';
@@ -24,6 +24,18 @@ function resolveInitialLocale(): Locale {
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(resolveInitialLocale);
+  const [messages, setMessages] = useState<Translation | null>(null);
+
+  // Load locale messages — initial mount and every locale change
+  useEffect(() => {
+    let cancelled = false;
+    preloadLocale(locale).then((msgs) => {
+      if (!cancelled) setMessages(msgs);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [locale]);
 
   const setLocale = useCallback((next: Locale) => {
     window.localStorage.setItem(STORAGE_KEY, next);
@@ -34,7 +46,10 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.lang = locale;
   }, [locale]);
 
-  const value = useMemo<I18nContextValue>(() => ({ locale, setLocale, messages: messages(locale) }), [locale, setLocale]);
+  // Wait until messages are loaded before rendering children
+  if (!messages) return null;
+
+  const value: I18nContextValue = { locale, setLocale, messages };
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }
