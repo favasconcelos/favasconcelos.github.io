@@ -5,7 +5,7 @@
   },
   "env": {
     "browser": true,
-    "es2026 ": true
+    "es2026": true
   },
   "rules": {
     "no-duplicate-imports": "error",
