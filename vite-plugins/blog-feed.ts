@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
 import type { Plugin } from 'vite';
@@ -12,6 +12,8 @@ const SITE_DESCRIPTION = 'Work in progress, weekly findings, packages and ideas 
 const escapeXml = (value: string) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&apos;');
 
 function loadPublishedPosts(postsDir: string): Post[] {
+  if (!existsSync(postsDir)) return [];
+
   return readdirSync(postsDir)
     .filter((file) => file.endsWith('.md'))
     .map((file) => parsePost(file, readFileSync(join(postsDir, file), 'utf8')))
