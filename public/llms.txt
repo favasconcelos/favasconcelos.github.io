@@ -57,3 +57,8 @@ Senior Software Engineer with 15+ years building full-stack products across mobi
 - [GitHub](https://github.com/favasconcelos)
 - [Email](mailto:f@avasconcelos.com)
 - [Resume](https://drive.google.com/file/d/1u4MOtXESS_GmHKQyBbY5wTmtfn_D4Moh/view?usp=sharing)
+
+## Blog
+
+- [Blog](https://avasconcelos.com/blog): work in progress, weekly findings, packages and ideas (English)
+- [RSS feed](https://avasconcelos.com/rss.xml)

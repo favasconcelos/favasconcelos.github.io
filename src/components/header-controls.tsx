@@ -1,3 +1,4 @@
+import { BlogNavLink } from '@/components/blog-nav-link';
 import { FloatingControl } from '@/components/floating-control';
 import { LanguageSwitcher } from '@/components/language-switcher';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -5,6 +6,7 @@ import { ThemeToggle } from '@/components/theme-toggle';
 export function HeaderControls() {
   return (
     <FloatingControl className="flex items-center gap-2">
+      <BlogNavLink />
       <ThemeToggle />
       <LanguageSwitcher />
     </FloatingControl>

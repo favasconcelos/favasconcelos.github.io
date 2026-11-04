@@ -65,6 +65,22 @@ export type Translation = {
     light: string;
     dark: string;
   };
+  blog: {
+    navBlog: string;
+    navHome: string;
+    title: string;
+    description: string;
+    languageNote: string;
+    empty: string;
+    filteredBy: string;
+    clearFilter: string;
+    readingTime: string;
+    backToPosts: string;
+    draft: string;
+    notFoundTitle: string;
+    notFoundText: string;
+    backHome: string;
+  };
 };
 
 export function isLocale(value: unknown): value is Locale {
