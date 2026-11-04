@@ -8,7 +8,7 @@ export function NotFoundPage() {
   const { messages } = useLocale();
   const { blog } = messages;
 
-  usePageMeta({ title: `${blog.notFoundTitle} — Felipe Vasconcelos`, description: blog.notFoundText, path: '/404' });
+  usePageMeta({ title: `${blog.notFoundTitle} — Felipe Vasconcelos`, description: blog.notFoundText, path: '/404', noindex: true });
 
   return (
     <PageShell>

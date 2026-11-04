@@ -7,6 +7,7 @@ type PageMeta = {
   description: string;
   path: string;
   type?: 'website' | 'article';
+  noindex?: boolean;
 };
 
 type MetaTarget = { selector: string; create: () => HTMLMetaElement };
@@ -48,7 +49,7 @@ function setMeta({ selector, create }: MetaTarget, content: string): () => void 
  * Updates the document title and SEO/social meta tags for the current route,
  * restoring the `index.html` defaults on unmount.
  */
-export function usePageMeta({ title, description, path, type = 'website' }: PageMeta): void {
+export function usePageMeta({ title, description, path, type = 'website', noindex = false }: PageMeta): void {
   useEffect(() => {
     const previousTitle = document.title;
     const url = `${SITE_URL}${path}`;
@@ -64,9 +65,11 @@ export function usePageMeta({ title, description, path, type = 'website' }: Page
       setMeta(metaByName('twitter:description'), description),
     ];
 
+    if (noindex) restores.push(setMeta(metaByName('robots'), 'noindex'));
+
     return () => {
       document.title = previousTitle;
       for (const restore of restores) restore();
     };
-  }, [title, description, path, type]);
+  }, [title, description, path, type, noindex]);
 }
