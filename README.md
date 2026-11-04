@@ -7,10 +7,12 @@ Personal website for Felipe Vasconcelos — built with React, TypeScript, Vite, 
 ## Tech Stack
 
 - **React 19** — UI
-- **TypeScript 5** — type safety
-- **Vite 6** — build tool
+- **React Router** — routing (`/`, `/blog`, `/blog/:slug`)
+- **TypeScript** — type safety
+- **Vite** — build tool
 - **Tailwind CSS 4** — styling
-- **oxlint** — linting
+- **react-markdown** — blog rendering (GFM + syntax highlighting)
+- **oxlint / oxfmt** — linting and formatting
 
 ## Getting Started
 
@@ -21,16 +23,60 @@ npm run dev
 
 ## Scripts
 
-| Command           | Description                      |
-| ----------------- | -------------------------------- |
-| `npm run dev`     | Start dev server                 |
-| `npm run build`   | Type-check + production build    |
-| `npm run preview` | Preview production build locally |
-| `npm run lint`    | Lint with oxlint                 |
+| Command             | Description                      |
+| ------------------- | -------------------------------- |
+| `npm run dev`       | Start dev server                 |
+| `npm run build`     | Type-check + production build    |
+| `npm run preview`   | Preview production build locally |
+| `npm run lint`      | Lint with oxlint                 |
+| `npm run fmt:check` | Check formatting with oxfmt      |
+| `npm run check`     | Format check + lint              |
+
+## Project Structure
+
+Code is organized by module under `src/`:
+
+```
+src/
+  main.tsx, app.tsx, index.css   # entry, providers + routes, global styles
+  modules/
+    home/                        # home-page.tsx + components/ (hero, about, ...) + hooks/
+    blog/                        # pages, components/, lib/ (parsing, loading), content/posts/
+    not-found/
+  shared/
+    layout/                      # header controls, page shell, floating control, scroll-to-top
+    components/                  # theme toggle, language switcher, icons
+    hooks/                       # use-theme, use-page-meta
+    i18n/                        # locales + provider
+    utils/
+```
+
+Each module owns its page(s) and anything only it uses. Code used by more than one module goes in `shared/`. Import with the `@/` alias (e.g. `@/modules/blog/lib/posts`).
+
+## Blog
+
+Posts are markdown files in `src/modules/blog/content/posts/`, bundled at build time. To publish, add a file and push:
+
+```md
+---
+title: 'Week 45: findings'
+date: 2026-11-04
+summary: One-line blurb shown in the post list, feed and link previews.
+tags: [weekly, tooling]
+draft: false
+---
+
+Markdown body (GFM tables, task lists and fenced code with syntax highlighting are supported).
+```
+
+- File name: `YYYY-MM-DD-some-slug.md`. The URL is `/blog/some-slug` (the date prefix is dropped).
+- Quote titles that contain `: `.
+- `draft: true` posts show up in `npm run dev` only. They are excluded from production builds, the RSS feed and the sitemap.
+- `rss.xml` and `sitemap.xml` are generated at build time (`vite-plugins/blog-feed.ts`).
+- Posts are English-only; the surrounding blog UI follows the site language switcher.
 
 ## Deployment
 
-Automated via GitHub Actions on every push to `main`:
+Deployed on Cloudflare Pages (`wrangler.jsonc`, output `dist/`). Unknown paths fall back to `index.html`, so `/blog/...` deep links work without extra config.
 
-- **CI** — lint + build on every push/PR
-- **CD** — deploys to GitHub Pages (`gh-pages` branch)
+CI (`.github/workflows/ci.yml`) runs lint, format check, type-check and build on every push and PR to `main`.

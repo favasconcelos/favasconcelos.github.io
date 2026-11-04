@@ -33,6 +33,9 @@
   --text: #1a1a1a;
   --text-muted: #6b6b6b;
   --border: #e0dcd0;
+  --code-string: #0f766e;
+  --code-title: #2b5fa8;
+  --code-number: #b4361d;
   color-scheme: light;
 }
 
@@ -45,6 +48,9 @@
   --text: #e2e8f0;
   --text-muted: #94a3b8;
   --border: #2d3348;
+  --code-string: #7dd3a8;
+  --code-title: #8ab4f8;
+  --code-number: #f0937d;
   color-scheme: dark;
 }
 
@@ -197,6 +203,65 @@ button:focus-visible {
 .reveal-right.visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* ── Syntax highlighting (rehype-highlight / highlight.js) ───
+   Generated token classes cannot take utilities, so they are
+   themed here from the design tokens (light + dark follow
+   [data-theme]). */
+.hljs-comment,
+.hljs-quote {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-built_in,
+.hljs-doctag {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-template-variable {
+  color: var(--code-string);
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-type,
+.hljs-class .hljs-title {
+  color: var(--code-title);
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-variable,
+.hljs-meta,
+.hljs-link {
+  color: var(--code-number);
+}
+
+.hljs-deletion {
+  color: var(--code-number);
+  text-decoration: line-through;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: 700;
 }
 
 /* ── Reduced motion ───────────────────────────────────────── */
