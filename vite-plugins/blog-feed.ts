@@ -3,7 +3,7 @@ import { join, resolve } from 'node:path';
 
 import type { Plugin } from 'vite';
 
-import { parsePost, type Post } from '../src/blog/parse-post';
+import { parsePost, type Post } from '../src/modules/blog/lib/parse-post';
 
 const SITE_URL = 'https://avasconcelos.com';
 const SITE_TITLE = 'Felipe Vasconcelos — Blog';
@@ -71,7 +71,7 @@ export function blogFeedPlugin(): Plugin {
     name: 'blog-feed',
     apply: 'build',
     configResolved(config) {
-      postsDir = resolve(config.root, 'src/content/posts');
+      postsDir = resolve(config.root, 'src/modules/blog/content/posts');
     },
     generateBundle() {
       const posts = loadPublishedPosts(postsDir);

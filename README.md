@@ -32,9 +32,30 @@ npm run dev
 | `npm run fmt:check` | Check formatting with oxfmt      |
 | `npm run check`     | Format check + lint              |
 
+## Project Structure
+
+Code is organized by module under `src/`:
+
+```
+src/
+  main.tsx, app.tsx, index.css   # entry, providers + routes, global styles
+  modules/
+    home/                        # home-page.tsx + components/ (hero, about, ...) + hooks/
+    blog/                        # pages, components/, lib/ (parsing, loading), content/posts/
+    not-found/
+  shared/
+    layout/                      # header controls, page shell, floating control, scroll-to-top
+    components/                  # theme toggle, language switcher, icons
+    hooks/                       # use-theme, use-page-meta
+    i18n/                        # locales + provider
+    utils/
+```
+
+Each module owns its page(s) and anything only it uses. Code used by more than one module goes in `shared/`. Import with the `@/` alias (e.g. `@/modules/blog/lib/posts`).
+
 ## Blog
 
-Posts are markdown files in `src/content/posts/`, bundled at build time. To publish, add a file and push:
+Posts are markdown files in `src/modules/blog/content/posts/`, bundled at build time. To publish, add a file and push:
 
 ```md
 ---
