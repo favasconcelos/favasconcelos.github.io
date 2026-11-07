@@ -112,7 +112,7 @@ await ctx.tool.hook('execute.before', async (event) => {
 
 Those are the tools most likely to run an AWS command. The plugin does not intercept the provider's own HTTP requests, so a long model call can still hit an expired session in the middle.
 
-The README says the plugin keeps AI sessions from being interrupted by auth errors. That is too strong. A more accurate sentence is: the plugin refreshes before the tool calls it can see, and provides a manual refresh for everything else.
+The README says the plugin keeps AI sessions from being interrupted by auth errors. A more accurate sentence is: the plugin refreshes before the tool calls it can see, and provides a manual refresh for everything else.
 
 ## Decision 6: make the session check cheap
 
@@ -134,20 +134,13 @@ The 20-minute interval is a compromise. Checking before every tool call would be
 
 The event subscription is tied to an `AbortController`, and the plugin returns a cleanup function that aborts it. Without that, a reloaded plugin would leave the old subscription alive and react to provider updates twice. The closure-scoped state helps here too: the old session's profile and timestamps are not shared with the new one.
 
-## What I would change
+## Ideas for future me
 
-- **Backoff after a failed login.** A cancelled browser prompt should not reopen on every call. A short exponential backoff would make the failure quieter.
-- **Broader coverage.** Guarding only `shell` and `subagent` leaves custom tools and provider calls uncovered. If OpenCode exposes a provider-level hook, that is the better place for the check.
-- **Clearer docs.** "Valid" means `sts get-caller-identity` succeeded. It does not mean the next Bedrock request will be accepted. The README should say that in one sentence.
-- **The 1.x to 2.x migration.** The plugin imports `@opencode/plugin` 2.x and uses `ctx.tool.transform`, `ctx.tool.hook`, `ctx.provider.get`, and `ctx.event.subscribe`. Maintaining both APIs is not worth it; 0.2.0 stays as the OpenCode 1 release.
-
-## Where it is still weak
-
-- **Credentials are not permissions.** A valid STS identity can still be denied `bedrock:InvokeModel`. The plugin does not check model access.
-- **Two tools are guarded.** A custom AWS tool, or a provider request in the middle of a long turn, is not.
-- **A failed login retries on the next guarded call.** There is no backoff.
-- **The check is before the tool, not during it.** A session that expires while a tool is running will still fail.
-- **It needs AWS CLI v2 and an SSO profile.** The profile must be under `providers.amazon-bedrock.settings.profile`; there is no auto-detection.
+- **Back off after a failed login.** A cancelled browser prompt currently retries on the next guarded call. A short exponential backoff would make the failure quieter.
+- **Cover more than two tools.** Guarding only `shell` and `subagent` leaves custom tools and provider calls uncovered. If OpenCode exposes a provider-level hook, that is the better place for the check.
+- **Check model access, not just credentials.** A valid STS identity can still be denied `bedrock:InvokeModel`; a small probe would catch that earlier.
+- **Say what "valid" means.** `sts get-caller-identity` succeeding does not mean the next Bedrock request will be accepted. The README should say that in one sentence.
+- **Keep the OpenCode 1 release pinned.** 0.2.0 stays as the OpenCode 1 version; I do not plan to maintain both APIs.
 
 ## Try it
 

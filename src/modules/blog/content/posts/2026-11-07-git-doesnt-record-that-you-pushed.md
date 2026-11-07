@@ -1,7 +1,7 @@
 ---
 title: "Git doesn't record that you pushed"
 date: 2026-11-07
-summary: "How pushlog reconstructs push times from git's reflog, and where the inference breaks."
+summary: "How pushlog reconstructs push times from git's reflog, and what I'd add next."
 tags: [git, cli, tooling]
 draft: false
 ---
@@ -148,18 +148,16 @@ The first run walks the roots (default `$HOME`) looking for `.git` entries, skip
 
 The tool does not make network requests. It reads local refs and local reflogs. That is why it is fast and why it cannot tell you that a branch was deleted on the remote five minutes ago.
 
-## Where the inference breaks
+## What I'd add next
 
-This is a local reconstruction, and it has sharp edges:
+pushlog 0.1.0 is a local reconstruction, so there are a few edges I would like to smooth out:
 
-- **Pushes from another machine.** The commit is on the remote, but this machine has no reflog entry. It shows `↑ remote`, which is accurate but not the same as "I pushed it".
-- **Reflog expiry.** Once the reflog expires (90 days by default), the push time is gone. If a remote-tracking ref still contains the commit, it degrades to `↑ remote`; if the remote branch was deleted, it can look local.
-- **Pushes without a tracking ref.** `git push <url>` does not necessarily update a remote-tracking ref, so there is nothing to record.
-- **A stale remote-tracking ref.** `↑ remote` means "on a remote as of the last fetch or push", not "on the remote right now". The network is the only way to know the current truth.
-- **The reflog subject.** I match the literal string `update by push`. I have not tested a localized git; if that message is translated, the match fails and pushes degrade to `↑ remote`. I would rather have that failure visible than silently mislabel a commit.
-- **Clock skew.** The 60-second allowance is a guess. A machine with a badly wrong clock will produce wrong answers.
+- **A `--verify` flag.** `↑ remote` is only as fresh as the last fetch or push. Asking the remote with `git ls-remote` would give a current answer when I need one.
+- **A localized-reflog check.** I match the literal `update by push`. I have not tested a non-English git; if that message is translated, pushes degrade to `↑ remote`.
+- **A clearer label for pushes from another machine.** `↑ remote` is accurate, but it is easy to read as "I pushed it". "Not pushed from here" says what it means.
+- **A configurable reflog window.** Git's 90-day default decides how far back push times go. I would like the report to say when it is guessing.
 
-None of these are fixable without asking the remote. `git ls-remote` or a hosting API would give a fresher answer, at the cost of network, credentials, and rate limits. For a stand-up report, local and fast was the right trade.
+For a stand-up report, local and fast is the right trade; `--verify` would be the escape hatch.
 
 ## Try it
 

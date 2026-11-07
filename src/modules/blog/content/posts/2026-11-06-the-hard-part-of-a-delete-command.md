@@ -6,7 +6,9 @@ tags: [cli, tooling, disk]
 draft: false
 ---
 
-The first version of [`reclaim-cli`](https://npmx.dev/package/reclaim-cli) was called `stale`. The name described the condition; the tool's job is to reclaim space. Renaming it at 0.3.0 touched the binary, the config and state directories, two environment variables, the launchd label, the shell hook, the notification title, and the error class. That was the most expensive naming decision I have made on a side project.
+Some of us keep a lot of random projects. Mine are spread across different folder levels because that is how I find them again: a work folder, a scratch folder, an OSS folder, a folder of experiments. Most of them have a `node_modules`, and often a `dist`, a `build`, or an Xcode `DerivedData` directory. At some point I had around 50 of them, and those regenerable folders were taking a lot of space while they waited for the day I came back.
+
+[`reclaim-cli`](https://npmx.dev/package/reclaim-cli) is the tool I use so I do not have to think about it. It scans the folders I watch, tells me which projects are stale and how much their artifacts take, and cleans them when I ask. Setup is `reclaim-cli init`; after that, the daily scan and the terminal hook do the reminding.
 
 The tool itself is not complicated. It finds projects you have not touched in a while and deletes their regenerable build output: `node_modules`, `.build`, Xcode `DerivedData`, Gradle `build`. Source files are out of scope.
 
@@ -139,21 +141,14 @@ That split is deliberate. A Node process on every shell startup is too expensive
 
 The cost is state: the scheduler stores the absolute path to Node and to the CLI. Switch Node versions and the job breaks. `reclaim-cli schedule status` reports it, and `schedule install` fixes it. The shell hook is also per-platform, per-shell surface area, and it is the part I expect to break first.
 
-## What I would change
+## Ideas for future me
 
-The name. I would pick the action, not the condition, before the first publish. The rename was a breaking change for anyone on 0.1.0: new binary, new config directory, new state directory, new environment variables, and a re-run of `init`, `hook install`, and `schedule install`.
-
-The platform order. The first release was macOS-only, with `"os": ["darwin"]` in `package.json`. That made `npm ci` fail on Linux CI. Moving the workflows to macOS fixed it, and cross-platform support landed in 0.4.0. Starting with the matrix you intend to support would have avoided both the CI surprise and the later port.
-
-The undo. Removals are appended to a JSONL history file, and `reclaim-cli log` shows them. That is enough to know what happened; it is not enough to put it back. For a destructive command, a dry run and a log are the minimum. An undo would be better.
-
-## Where it is still weak
-
-- **mtime is a heuristic.** A file touch, a lockfile rewrite, or an editor can reset staleness. The tool can be wrong in both directions.
-- **Non-git projects have no dirty check.** The scanner only deletes artifacts, not source, but it cannot tell you that a non-git project has unsaved work.
-- **Three ecosystems.** A Rust `target/`, a Python `.venv`, or a Go build cache are not handled. Adding a type is a small interface, but each one needs its own safety rules.
-- **Xcode `DerivedData` matching depends on `plutil`.** The scanner reads `WorkspacePath` from each folder's `info.plist`. If Xcode changes that format, the match fails.
-- **No measured savings claim.** I have not run a controlled before/after across my own machine. The fixture above shows the decisions; it does not show a reclaimed gigabyte.
+- **Ship the platform matrix first.** Starting with macOS only made `npm ci` fail on Linux CI and pushed the cross-platform work to 0.4.0. Next time, I would wire the intended platforms into CI from the first release.
+- **Add an undo.** The history log tells me what was removed, not how to put it back. Undo is the next safety feature I want.
+- **Cover more project types.** Rust `target/`, Python `.venv`, and Go build caches are not handled yet. Each one needs its own safety rules, not just a path.
+- **Make staleness less dependent on mtime.** Touching a README currently resets the clock. I would like a signal closer to actual use, and a dirty check for non-git folders, which today have none.
+- **Measure the real numbers.** I have not run a controlled before/after across my own machine. The fixture shows the decisions; it does not show a reclaimed gigabyte.
+- **Make the Xcode match resilient.** `DerivedData` is matched by reading `WorkspacePath` from `info.plist`. If that format changes, I want a fallback that still finds the folder.
 
 ## Try it
 
