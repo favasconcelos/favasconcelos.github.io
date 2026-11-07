@@ -3,5 +3,6 @@
   "printWidth": 200,
   "singleQuote": true,
   "sortImports": true,
-  "sortTailwindcss": true
+  "sortTailwindcss": true,
+  "embeddedLanguageFormatting": "off"
 }
