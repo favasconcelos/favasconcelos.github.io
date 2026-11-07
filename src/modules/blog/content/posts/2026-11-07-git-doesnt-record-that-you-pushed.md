@@ -6,11 +6,9 @@ tags: [git, cli, tooling]
 draft: false
 ---
 
-At the end of a workday I can usually remember what I did. I cannot remember which of it left the laptop.
+Some weeks I have several projects in flight at once. Keeping track of what I actually pushed, and what I only worked on, is hard enough during the day; the next morning, in the daily, it is worse. The obvious answer is `git log --author=me`, but that answers a different question: what did I commit. A commit can sit on a local branch for a week, or forever. It can also be on a remote without this machine having any record of putting it there.
 
-The question sounds like a job for `git log --author=me`. That command answers a different question: what did I commit. A commit can sit on a local branch for a week, or forever. It can also be on a remote without this machine having any record of putting it there.
-
-I built [`pushlog`](https://npmx.dev/package/pushlog) to answer the narrower question across every repository on the machine: which commits are mine, and which ones are actually pushed?
+I built [`pushlog`](https://npmx.dev/package/pushlog) to list every commit I made across the repositories on the machine and show which ones are actually pushed. I have it scheduled to run every morning before the meetings, so the report is waiting when I sit down: I open it, see what I did the day before, and use it in the daily.
 
 The output looks like this:
 
